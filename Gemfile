@@ -22,6 +22,7 @@ group :test do
   gem 'minitest-reporters', '~> 1.1.9'
   gem 'minitest-focus'
   gem 'simplecov'
+  gem 'coveralls'
   gem 'rack', '~> 1.4.7'
   gem 'vcr'
   gem 'timecop'

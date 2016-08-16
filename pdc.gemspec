@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
 
   s.summary       = 'Ruby gem for use with Product-Definition-Center'
   s.description   = 'API for PDC'
-  s.homepage      = 'http://github.com/sthaha/pdc-ruby'
+  s.homepage      = 'https://github.com/product-definition-center/pdc-ruby-gem'
   s.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or

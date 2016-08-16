@@ -1,6 +1,8 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 
 require 'simplecov'
+require 'coveralls'
+SimpleCov.formatter = Coveralls::SimpleCov::Formatter
 SimpleCov.start { add_filter 'test' }
 
 require 'ap'
