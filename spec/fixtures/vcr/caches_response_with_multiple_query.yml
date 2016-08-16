@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/releases/?page=2&page_size=30
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Wed, 27 Jul 2016 04:55:17 GMT
+      server:
+      - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.1e-fips mod_auth_kerb/5.4
+        mod_wsgi/3.4 Python/2.7.5
+      expires:
+      - Wed, 27 Jul 2016 04:55:47 GMT
+      vary:
+      - Accept,Cookie
+      last-modified:
+      - Thu, 21 Jul 2016 12:24:12 GMT
+      allow:
+      - GET, POST, PUT, PATCH, HEAD, OPTIONS
+      cache-control:
+      - max-age=30
+      x-frame-options:
+      - SAMEORIGIN
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+      content-type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"count":54,"next":null,"previous":"https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/releases/?page_size=30","results":[{"release_id":"satellite-6.2@rhel-7","short":"satellite","version":"6.2","name":"Red
+        Hat Satellite","base_product":"rhel-7","active":true,"product_version":"satellite-6","release_type":"ga","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null},{"release_id":"satellite-6.2-updates@rhel-6","short":"satellite","version":"6.2","name":"Red
+        Hat Satellite","base_product":"rhel-6","active":true,"product_version":"satellite-6","release_type":"updates","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":{"default_target":null,"allowed_tags":["satellite-6.2.0-rhel-6"]},"product_pages":null,"errata":null},{"release_id":"satellite-6.2-updates@rhel-7","short":"satellite","version":"6.2","name":"Red
+        Hat Satellite","base_product":"rhel-7","active":true,"product_version":"satellite-6","release_type":"updates","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":{"default_target":null,"allowed_tags":["satellite-6.2.0-rhel-7"]},"product_pages":null,"errata":null},{"release_id":"sattools-6.2@rhel-6.2-aus","short":"sattools","version":"6.2","name":"Red
+        Hat Satellite Tools","base_product":"rhel-6.2-aus","active":true,"product_version":"sattools-6","release_type":"ga","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null},{"release_id":"sattools-6.2@rhel-5","short":"sattools","version":"6.2","name":"Red
+        Hat Satellite Tools","base_product":"rhel-5","active":true,"product_version":"sattools-6","release_type":"ga","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null},{"release_id":"sattools-6.2@rhel-5.6-aus","short":"sattools","version":"6.2","name":"Red
+        Hat Satellite Tools","base_product":"rhel-5.6-aus","active":true,"product_version":"sattools-6","release_type":"ga","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null},{"release_id":"sattools-6.2@rhel-5.9-aus","short":"sattools","version":"6.2","name":"Red
+        Hat Satellite Tools","base_product":"rhel-5.9-aus","active":true,"product_version":"sattools-6","release_type":"ga","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null},{"release_id":"sattools-6.2@rhel-6","short":"sattools","version":"6.2","name":"Red
+        Hat Satellite Tools","base_product":"rhel-6","active":true,"product_version":"sattools-6","release_type":"ga","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null},{"release_id":"sattools-6.2@rhel-6.4-aus","short":"sattools","version":"6.2","name":"Red
+        Hat Satellite Tools","base_product":"rhel-6.4-aus","active":true,"product_version":"sattools-6","release_type":"ga","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null},{"release_id":"sattools-6.2@rhel-6.5-aus","short":"sattools","version":"6.2","name":"Red
+        Hat Satellite Tools","base_product":"rhel-6.5-aus","active":true,"product_version":"sattools-6","release_type":"ga","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null},{"release_id":"sattools-6.2@rhel-6.6-eus","short":"sattools","version":"6.2","name":"Red
+        Hat Satellite Tools","base_product":"rhel-6.6-eus","active":true,"product_version":"sattools-6","release_type":"ga","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null},{"release_id":"sattools-6.2@rhel-6.7-eus","short":"sattools","version":"6.2","name":"Red
+        Hat Satellite Tools","base_product":"rhel-6.7-eus","active":true,"product_version":"sattools-6","release_type":"ga","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null},{"release_id":"sattools-6.2@rhel-7","short":"sattools","version":"6.2","name":"Red
+        Hat Satellite Tools","base_product":"rhel-7","active":true,"product_version":"sattools-6","release_type":"ga","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null},{"release_id":"sattools-6.2@rhel-7.1-eus","short":"sattools","version":"6.2","name":"Red
+        Hat Satellite Tools","base_product":"rhel-7.1-eus","active":true,"product_version":"sattools-6","release_type":"ga","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null},{"release_id":"sattools-6.2@rhel-7.2-eus","short":"sattools","version":"6.2","name":"Red
+        Hat Satellite Tools","base_product":"rhel-7.2-eus","active":true,"product_version":"sattools-6","release_type":"ga","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null},{"release_id":"supp-7.0@rhel-7","short":"supp","version":"7.0","name":"Supplementary","base_product":"rhel-7","active":true,"product_version":"supp-7","release_type":"ga","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null},{"release_id":"test-1.0","short":"test","version":"1.0","name":"test","base_product":null,"active":true,"product_version":null,"release_type":"ga","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null},{"release_id":"test1-1.0","short":"test1","version":"1.0","name":"test1","base_product":null,"active":true,"product_version":null,"release_type":"ga","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null},{"release_id":"test2-1.0","short":"test2","version":"1.0","name":"test2","base_product":null,"active":true,"product_version":null,"release_type":"ga","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null},{"release_id":"test3-1.0","short":"test3","version":"1.0","name":"test3","base_product":null,"active":true,"product_version":null,"release_type":"ga","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null},{"release_id":"test4-1.0","short":"test4","version":"1.0","name":"test4","base_product":null,"active":true,"product_version":null,"release_type":"ga","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null},{"release_id":"test5-1.0","short":"test5","version":"1.0","name":"test5","base_product":null,"active":true,"product_version":null,"release_type":"ga","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null},{"release_id":"test6-1.0","short":"test6","version":"1.0","name":"test6","base_product":null,"active":true,"product_version":null,"release_type":"ga","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null},{"release_id":"test7-1.0","short":"test7","version":"1.0","name":"test7","base_product":null,"active":true,"product_version":null,"release_type":"ga","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null}]}'
+    http_version: 
+  recorded_at: Thu, 31 Dec 2015 14:00:02 GMT
+recorded_with: VCR 3.0.3

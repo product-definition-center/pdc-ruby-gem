@@ -1,0 +1,135 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/arches/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Wed, 27 Jul 2016 06:46:05 GMT
+      server:
+      - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.1e-fips mod_auth_kerb/5.4
+        mod_wsgi/3.4 Python/2.7.5
+      expires:
+      - Wed, 27 Jul 2016 06:46:38 GMT
+      vary:
+      - Accept,Cookie
+      last-modified:
+      - Thu, 30 Jun 2016 10:00:15 GMT
+      allow:
+      - GET, POST, HEAD, OPTIONS
+      cache-control:
+      - max-age=30
+      x-frame-options:
+      - SAMEORIGIN
+      transfer-encoding:
+      - chunked
+      content-type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"count":50,"next":"https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/arches/?page=2","previous":null,"results":[{"name":"alpha"},{"name":"alphaev4"},{"name":"alphaev45"},{"name":"alphaev5"},{"name":"alphaev56"},{"name":"alphaev6"},{"name":"alphaev67"},{"name":"alphaev68"},{"name":"alphaev7"},{"name":"alphapca56"},{"name":"amd64"},{"name":"arm64"},{"name":"armv5tejl"},{"name":"armv5tel"},{"name":"armv6l"},{"name":"armv7hl"},{"name":"armv7hnl"},{"name":"armv7l"},{"name":"athlon"},{"name":"geode"}]}'
+    http_version: 
+  recorded_at: Wed, 27 Jul 2016 06:46:08 GMT
+- request:
+    method: get
+    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/arches/?page=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Wed, 27 Jul 2016 06:46:09 GMT
+      server:
+      - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.1e-fips mod_auth_kerb/5.4
+        mod_wsgi/3.4 Python/2.7.5
+      expires:
+      - Wed, 27 Jul 2016 06:46:42 GMT
+      vary:
+      - Accept,Cookie
+      last-modified:
+      - Thu, 30 Jun 2016 10:00:15 GMT
+      allow:
+      - GET, POST, HEAD, OPTIONS
+      cache-control:
+      - max-age=30
+      x-frame-options:
+      - SAMEORIGIN
+      transfer-encoding:
+      - chunked
+      content-type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"count":50,"next":"https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/arches/?page=3","previous":"https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/arches/","results":[{"name":"i386"},{"name":"i486"},{"name":"i586"},{"name":"i686"},{"name":"ia32e"},{"name":"ia64"},{"name":"noarch"},{"name":"nosrc"},{"name":"ppc"},{"name":"ppc64"},{"name":"ppc64iseries"},{"name":"ppc64le"},{"name":"ppc64p7"},{"name":"ppc64pseries"},{"name":"s390"},{"name":"s390x"},{"name":"sh3"},{"name":"sh4"},{"name":"sh4a"},{"name":"sparc"}]}'
+    http_version: 
+  recorded_at: Wed, 27 Jul 2016 06:46:12 GMT
+- request:
+    method: get
+    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/arches/?page=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Wed, 27 Jul 2016 06:46:13 GMT
+      server:
+      - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.1e-fips mod_auth_kerb/5.4
+        mod_wsgi/3.4 Python/2.7.5
+      expires:
+      - Wed, 27 Jul 2016 06:46:45 GMT
+      vary:
+      - Accept,Cookie
+      last-modified:
+      - Thu, 30 Jun 2016 10:00:15 GMT
+      allow:
+      - GET, POST, HEAD, OPTIONS
+      cache-control:
+      - max-age=30
+      x-frame-options:
+      - SAMEORIGIN
+      transfer-encoding:
+      - chunked
+      content-type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"count":50,"next":"https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/arches/?page=3","previous":"https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/arches/","results":[{"name":"i386"},{"name":"i486"},{"name":"i586"},{"name":"i686"},{"name":"ia32e"},{"name":"ia64"},{"name":"noarch"},{"name":"nosrc"},{"name":"ppc"},{"name":"ppc64"},{"name":"ppc64iseries"},{"name":"ppc64le"},{"name":"ppc64p7"},{"name":"ppc64pseries"},{"name":"s390"},{"name":"s390x"},{"name":"sh3"},{"name":"sh4"},{"name":"sh4a"},{"name":"sparc"}]}'
+    http_version: 
+  recorded_at: Wed, 27 Jul 2016 06:46:16 GMT
+recorded_with: VCR 3.0.3
