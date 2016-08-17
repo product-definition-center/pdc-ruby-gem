@@ -1,0 +1,1 @@
+Search.setIndex({objects:{},terms:{pleas:1,index:0,search:0,markdown:1,welcom:0,rubi:0,indic:0,exampl:[0,1],content:0,write:1,file:1,tabl:0,document:[0,1],pdc:0,page:[0,1],gem:0,first:[0,1]},objtypes:{},titles:["Welcome to PDC Ruby Gem&#8217;s documentation!","1. First page"],objnames:{},filenames:["index","example"]})
