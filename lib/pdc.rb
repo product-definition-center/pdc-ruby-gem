@@ -17,9 +17,4 @@ module PDC
   require 'pdc/config'
   require 'pdc/base'
   require 'pdc/v1'
-
-  # TODO: delete debug gems
-  require 'ap'
-  require 'pry'
-
 end
