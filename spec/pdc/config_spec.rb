@@ -31,23 +31,43 @@ describe PDC do
       ret.must_be_instance_of Faraday::Connection
     end
 
-    it 'fetches token by default' do
+    it 'should not fetches token in configuration' do
       endpoint = stub_request(:get, token_url).to_return_json(token: 'foobar')
       PDC.configure { |pdc| pdc.site = site }
 
-      assert_requested endpoint
-      PDC.token.must_equal 'foobar'
+      assert_not_requested endpoint
     end
 
-    it 'raises TokenFetchFailed when fails' do
+    it 'should fetches token only after call token method' do
+      endpoint = stub_request(:get, token_url).to_return_json(token: 'foobar')
+      PDC.configure { |pdc| pdc.site = site }
+
+      assert_not_requested endpoint
+      PDC.token.must_equal 'foobar'
+      assert_requested endpoint
+    end
+
+    it 'not raises exception when configure with incorrect url' do
       endpoint = stub_request(:get, token_url).to_return_json(
         { detail: 'Not found' },
         status: [404, 'NOT FOUND']
       )
+      PDC.configure { |pdc| pdc.site = site }
+
+      assert_not_requested endpoint
+    end
+
+    it 'raises TokenFetchFailed when call token method with incorrect url' do
+      endpoint = stub_request(:get, token_url).to_return_json(
+        { detail: 'Not found' },
+        status: [404, 'NOT FOUND']
+      )
+      PDC.configure { |pdc| pdc.site = site }
 
       assert_raises PDC::TokenFetchFailed do
-        PDC.configure { |pdc| pdc.site = site }
+        PDC.token
       end
+
       assert_requested endpoint
     end
   end

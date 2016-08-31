@@ -11,6 +11,9 @@ module PDC::Resource
         PDC.logger.debug '  >>>'.yellow + " : #{path.ai} #{query.ai}"
         ActiveSupport::Notifications.instrument('request.pdc', method: method) do |payload|
           response = connection.send(method) do |request|
+            if PDC.config.requires_token
+              request.headers['Token'] = PDC.token
+            end
             request.url path, query
           end
           payload[:url], payload[:status] = response.env.url, response.status
