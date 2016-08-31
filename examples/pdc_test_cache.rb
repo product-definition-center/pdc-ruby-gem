@@ -5,7 +5,7 @@ require_relative '../spec/spec_helper'
 WebMock.disable!
 PDC.configure do |config|
   # dev server
-  config.site = 'https://pdc.host.dev.eng.pek2.redhat.com/'
+  config.site = 'https://pdc.engineering.redhat.com/'
   config.cache_store = ActiveSupport::Cache.lookup_store(
     :file_store, [File.join(ENV['TMPDIR'] || '/tmp', 'cache')])
   config.log_level = :info

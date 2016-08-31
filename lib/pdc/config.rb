@@ -91,10 +91,9 @@ module PDC
 
     def token
       @token ||= config.token || fetch_token
-      @token
     end
 
-    def clear_token
+    def reset_token
       @token = nil
     end
 
@@ -112,10 +111,11 @@ module PDC
 
       # resets and returns the +Faraday+ +connection+ object
       def reset_base_connection
-        clear_token
+        reset_token
         headers = PDC::Request.default_headers
         PDC::Base.connection = Faraday.new(url: api_url, headers: headers) do |c|
           c.request   :append_slash_to_path
+          c.request   :put_token_to_header if config.requires_token
 
           c.response  :logger, config.logger
           c.response  :pdc_paginator
