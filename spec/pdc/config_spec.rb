@@ -31,14 +31,14 @@ describe PDC do
       ret.must_be_instance_of Faraday::Connection
     end
 
-    it 'should not fetches token in configuration' do
+    it 'should not fetch token during configure' do
       endpoint = stub_request(:get, token_url).to_return_json(token: 'foobar')
       PDC.configure { |pdc| pdc.site = site }
 
       assert_not_requested endpoint
     end
 
-    it 'should fetches token only after call token method' do
+    it 'should fetch token only after call token method' do
       endpoint = stub_request(:get, token_url).to_return_json(token: 'foobar')
       PDC.configure { |pdc| pdc.site = site }
 
@@ -47,7 +47,7 @@ describe PDC do
       assert_requested endpoint
     end
 
-    it 'not raises exception when configure with incorrect url' do
+    it 'must not raise exception when configure with incorrect url' do
       endpoint = stub_request(:get, token_url).to_return_json(
         { detail: 'Not found' },
         status: [404, 'NOT FOUND']
