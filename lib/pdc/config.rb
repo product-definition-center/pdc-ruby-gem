@@ -108,7 +108,9 @@ module PDC
       # resets and returns the +Faraday+ +connection+ object
       def reset_base_connection
         headers = PDC::Request.default_headers
-        PDC::Base.connection = Faraday.new(url: api_url, headers: headers) do |c|
+        PDC::Base.connection = Faraday.new(
+          url: api_url, headers: headers,
+          :ssl => {:verify => (config.ssl_verify_mode == OpenSSL::SSL::VERIFY_PEER)}) do |c|
           c.request   :append_slash_to_path
           c.request   :authorization, 'Token', token if config.requires_token
 
