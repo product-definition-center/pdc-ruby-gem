@@ -11,6 +11,7 @@ module PDC
 
   require 'pdc/errors'
   require 'pdc/logger'
+  require 'pdc/token'
   require 'pdc/http'
   require 'pdc/resource'
 

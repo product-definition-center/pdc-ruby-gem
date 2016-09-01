@@ -57,7 +57,7 @@ describe PDC do
       assert_not_requested endpoint
     end
 
-    it 'raises TokenFetchFailed when call token method with incorrect url' do
+    it 'raises TokenFetchFailed when called with incorrect url' do
       endpoint = stub_request(:get, token_url).to_return_json(
         { detail: 'Not found' },
         status: [404, 'NOT FOUND']

@@ -3,6 +3,7 @@ module PDC
     extend ActiveModel::Naming
 
     include PDC::Logging
+    include PDC::TokenFetcher
     include PDC::Resource::Identity
     include PDC::Resource::Attributes
     include PDC::Resource::Scopes

@@ -1,5 +1,5 @@
 require 'pdc/http/request/append_slash'
-require 'pdc/http/request/put_token'
+require 'pdc/http/request/pdc_token'
 
 module PDC
   module Request
