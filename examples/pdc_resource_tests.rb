@@ -9,7 +9,7 @@ def token
   token_path = File.join(script_path, '.token', 'pdc.prod')
   File.read(token_path).chomp.tap { |x| puts "Using token :#{x.ai}" }
 rescue Errno::ENOENT => e
-  puts "Hey! did you forget to create #{token_path.ai} \n".red
+  puts "Hey! did you forget to create #{token_path.ai} \n"
   raise e
 end
 

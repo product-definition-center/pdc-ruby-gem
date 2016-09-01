@@ -1,5 +1,4 @@
 require 'faraday-http-cache'
-require 'curb'
 
 module PDC
   # This class is the main access point for all PDC::Resource instances.
@@ -20,6 +19,7 @@ module PDC
   # objects.
 
   class << self
+    include PDC::TokenFetcher
     Config = Struct.new(
       :site,
       :api_root,
@@ -90,7 +90,8 @@ module PDC
     end
 
     def token
-      config.token || fetch_token
+      set_token(config.token)
+      fetch_token
     end
 
     private
@@ -112,7 +113,11 @@ module PDC
           url: api_url, headers: headers,
           :ssl => {:verify => (config.ssl_verify_mode == OpenSSL::SSL::VERIFY_PEER)}) do |c|
           c.request   :append_slash_to_path
-          c.request   :authorization, 'Token', token if config.requires_token
+          if config.requires_token
+            set_token(config.token)
+            set_token_url(token_url)
+            c.request   :pdc_token
+          end
 
           c.response  :logger, config.logger
           c.response  :pdc_paginator
@@ -135,25 +140,5 @@ module PDC
         config.cache_store || ActiveSupport::Cache.lookup_store(:memory_store)
       end
 
-      def fetch_token
-        curl = Curl::Easy.new(token_url.to_s) do |request|
-          request.headers['Accept'] = 'application/json'
-          request.http_auth_types = :gssnegotiate
-
-          # The curl man page (http://curl.haxx.se/docs/manpage.html)
-          # specifes setting a fake username when using Negotiate auth,
-          # and use ':' in their example.
-          request.username = ':'
-        end
-        curl.perform
-        if curl.response_code != 200
-          logger.info "Obtain token from #{token_url} failed: #{curl.body_str}"
-          error = { token_url: token_url, body: curl.body, code: curl.response_code }
-          raise PDC::TokenFetchFailed, error
-        end
-        result = JSON.parse(curl.body_str)
-        curl.close
-        result['token']
-      end
   end
 end

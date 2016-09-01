@@ -13,7 +13,7 @@ end
 WebMock.allow_net_connect!
 
 WebMock.stub_request(:any, /.*/).to_return do |request|
-  puts "UNSTUBBED REQUEST:".red + " #{request.method.upcase} #{request.uri}"
+  puts "UNSTUBBED REQUEST:" + " #{request.method.upcase} #{request.uri}"
   { body: nil }
 end
 

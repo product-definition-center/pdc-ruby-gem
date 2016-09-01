@@ -5,7 +5,7 @@ module PDC::Response
     Faraday::Response.register_middleware :pdc_paginator => self
 
     def parse(json)
-      logger.debug "\n.....paginate json .....................................".redish
+      logger.debug "\n.....paginate json ....................................."
 
       metadata = json[:metadata]
       logger.debug metadata
@@ -21,7 +21,7 @@ module PDC::Response
         previous_page:    request_uri(metadata.delete(:previous)),
       }
 
-      logger.debug '... after parsing pagination data:'.green
+      logger.debug '... after parsing pagination data:'
       logger.debug metadata
       json
     end
