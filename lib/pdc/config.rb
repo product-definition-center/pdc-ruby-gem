@@ -1,5 +1,5 @@
 require 'faraday-http-cache'
-require 'curb'
+require 'pdc/http/request/token_fetcher'
 
 module PDC
   # This class is the main access point for all PDC::Resource instances.
@@ -90,7 +90,7 @@ module PDC
     end
 
     def token
-      config.token || fetch_token
+      config.token || Request::TokenFetcher.fetch(token_url)
     end
 
     private
@@ -107,12 +107,16 @@ module PDC
 
       # resets and returns the +Faraday+ +connection+ object
       def reset_base_connection
-        headers = PDC::Request.default_headers
-        PDC::Base.connection = Faraday.new(
-          url: api_url, headers: headers,
-          :ssl => {:verify => (config.ssl_verify_mode == OpenSSL::SSL::VERIFY_PEER)}) do |c|
+
+        faraday_config = {
+          url:      api_url,
+          headers:  PDC::Request.default_headers,
+          ssl:      ssl_config
+        }
+
+        PDC::Base.connection = Faraday.new(faraday_config) do |c|
           c.request   :append_slash_to_path
-          c.request   :authorization, 'Token', token if config.requires_token
+          c.request   :pdc_token, token: config.token, token_url: token_url if config.requires_token
 
           c.response  :logger, config.logger
           c.response  :pdc_paginator
@@ -131,29 +135,13 @@ module PDC
         end
       end
 
+      def ssl_config
+        { verify: config.ssl_verify_mode == OpenSSL::SSL::VERIFY_PEER }
+      end
+
       def cache_store
         config.cache_store || ActiveSupport::Cache.lookup_store(:memory_store)
       end
 
-      def fetch_token
-        curl = Curl::Easy.new(token_url.to_s) do |request|
-          request.headers['Accept'] = 'application/json'
-          request.http_auth_types = :gssnegotiate
-
-          # The curl man page (http://curl.haxx.se/docs/manpage.html)
-          # specifes setting a fake username when using Negotiate auth,
-          # and use ':' in their example.
-          request.username = ':'
-        end
-        curl.perform
-        if curl.response_code != 200
-          logger.info "Obtain token from #{token_url} failed: #{curl.body_str}"
-          error = { token_url: token_url, body: curl.body, code: curl.response_code }
-          raise PDC::TokenFetchFailed, error
-        end
-        result = JSON.parse(curl.body_str)
-        curl.close
-        result['token']
-      end
   end
 end
