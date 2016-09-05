@@ -10,9 +10,14 @@ describe PDC do
 
   describe '##configure' do
     let(:site) { 'https://pdc.production.site.org' }
+
     let(:token_url) do
       pdc = PDC.config
       URI.join(site, pdc.api_root, pdc.token_obtain_path)
+    end
+
+    let(:releases_url) do
+      URI.join(site, PDC.config.api_root, 'v1/releases/')
     end
 
     it 'wont accept invalid config' do
@@ -31,24 +36,38 @@ describe PDC do
       ret.must_be_instance_of Faraday::Connection
     end
 
-    it 'fetches token by default' do
-      endpoint = stub_request(:get, token_url).to_return_json(token: 'foobar')
+    it 'must not fetch token during configure step' do
+      token = stub_request(:get, token_url).to_return_json(token: 'foobar')
       PDC.configure { |pdc| pdc.site = site }
 
-      assert_requested endpoint
-      PDC.token.must_equal 'foobar'
+      assert_not_requested token
+    end
+
+    it 'fetches token on first request' do
+      token = stub_request(:get, token_url).to_return_json(token: 'foobar')
+
+      PDC.configure { |pdc| pdc.site = site }
+      assert_not_requested token
+
+      releases = stub_request(:get, releases_url).to_return_json(count: 0)
+      3.times { PDC::V1::Release.count }
+
+      # the releases will be requested n times but the token will be reused
+      assert_requested token, times: 1
+      assert_requested releases, times: 3
     end
 
     it 'raises TokenFetchFailed when fails' do
-      endpoint = stub_request(:get, token_url).to_return_json(
+      token = stub_request(:get, token_url).to_return_json(
         { detail: 'Not found' },
         status: [404, 'NOT FOUND']
       )
 
+      PDC.configure { |pdc| pdc.site = site }
       assert_raises PDC::TokenFetchFailed do
-        PDC.configure { |pdc| pdc.site = site }
+        PDC.token
       end
-      assert_requested endpoint
+      assert_requested token
     end
   end
 
