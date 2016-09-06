@@ -13,7 +13,7 @@ end
 
 ActiveSupport::Notifications.subscribe "http_cache.faraday" do |*args|
   event = ActiveSupport::Notifications::Event.new(*args)
-  puts " >>> ".yellow + "cache: #{event.payload[:cache_status]}"
+  puts " >>> " + "cache: #{event.payload[:cache_status]}"
   ap event.payload
 end
 

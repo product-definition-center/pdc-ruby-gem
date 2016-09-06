@@ -8,7 +8,7 @@ module PDC::Response
     Faraday::Response.register_middleware :pdc_json_parser => self
 
     def parse(body)
-      logger.debug "\n.....parse to json .....................................".yellow
+      logger.debug "\n.....parse to json ....................................."
       logger.debug self.class
 
       logger.debug "... parsing #{body.ai.truncate(55)}"

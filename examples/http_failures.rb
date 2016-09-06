@@ -14,5 +14,5 @@ begin
   release.to_a
 rescue PDC::Error::ResourceNotFound => e
   ap e
-  puts "Got resource not found as expected: #{e.response[:status]}".yellowish
+  puts "Got resource not found as expected: #{e.response[:status]}"
 end
