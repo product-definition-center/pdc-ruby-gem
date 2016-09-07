@@ -22,7 +22,7 @@ module PDC
     module WebMockExtentions
       def stub_get(path)
         uri = URI.join(Fixtures::Base::SITE, 'fixtures/', path).to_s
-        puts "    stubbing: #{uri.ai}"
+        puts "    stubbing: #{uri}"
         stub_request(:get, uri)
       end
     end

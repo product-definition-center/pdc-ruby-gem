@@ -11,7 +11,7 @@ module PDC::Response
       logger.debug "\n.....parse to json ....................................."
       logger.debug self.class
 
-      logger.debug "... parsing #{body.ai.truncate(55)}"
+      logger.debug '... parsing' +  body.to_s.truncate(55)
       begin
         json = MultiJson.load(body, symbolize_keys: true)
       rescue MultiJson::ParseError => e

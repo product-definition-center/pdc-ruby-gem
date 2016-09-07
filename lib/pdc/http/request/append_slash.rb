@@ -12,7 +12,7 @@ module PDC
       path = env.url.path
       env.url.path = path + '/' unless path.ends_with?('/')
 
-      logger.debug "...  after adding / #{env.url.path}: #{env.url.ai}"
+      logger.debug "...  after adding / #{env.url.path}: #{env.url}"
       @app.call(env)
     end
   end

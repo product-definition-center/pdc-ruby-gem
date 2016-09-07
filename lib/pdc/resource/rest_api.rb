@@ -8,7 +8,7 @@ module PDC::Resource
 
     module ClassMethods
       def request(method, path, query = {})
-        PDC.logger.debug '  >>>' + " : #{path.ai} #{query.ai}"
+        PDC.logger.debug '  >>>' + " : #{path} #{query}"
         ActiveSupport::Notifications.instrument('request.pdc', method: method) do |payload|
           response = connection.send(method) do |request|
             request.url path, query

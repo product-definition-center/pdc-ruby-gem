@@ -23,8 +23,8 @@ def benchmark(description, opts = {}, &block)
   initial = Benchmark.measure(&block)
   repeat = Benchmark.measure(&block)
 
-  puts "Initial :  #{initial.to_s.chomp} >> #{initial.real.round(2).ai}"
-  puts "Repeat  :  #{repeat.to_s.chomp} >> #{repeat.real.round(2).ai} \n"
+  puts "Initial :  #{initial.to_s.chomp} >> #{initial.real.round(2)}"
+  puts "Repeat  :  #{repeat.to_s.chomp} >> #{repeat.real.round(2)} \n"
 end
 
 def main
