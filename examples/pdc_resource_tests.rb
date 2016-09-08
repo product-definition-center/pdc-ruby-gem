@@ -7,9 +7,9 @@ WebMock.disable! # this uses real server
 def token
   script_path = File.expand_path(File.dirname(__FILE__))
   token_path = File.join(script_path, '.token', 'pdc.prod')
-  File.read(token_path).chomp.tap { |x| puts "Using token :#{x.ai}" }
+  File.read(token_path).chomp.tap { |x| puts "Using token :#{x}" }
 rescue Errno::ENOENT => e
-  puts "Hey! did you forget to create #{token_path.ai} \n".red
+  puts "Hey! did you forget to create #{token_path} \n"
   raise e
 end
 

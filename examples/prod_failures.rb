@@ -18,7 +18,7 @@ def main
     ap resources
   rescue PDC::ResourceNotFound => e
     ap e
-    puts "Got resource not found as expected: #{e.response.status}".yellowish
+    puts "Got resource not found as expected: #{e.response.status}"
     ap e.message
   end
 end

@@ -6,8 +6,8 @@ require 'pdc/version'
 Gem::Specification.new do |s|
   s.name          = 'pdc'
   s.version       = PDC::VERSION
-  s.authors       = ['Sunil Thaha']
-  s.email         = ['sthaha@redhat.com']
+  s.authors       = ['Sunil Thaha', 'Cheng Yu']
+  s.email         = ['sthaha@redhat.com', 'ycheng@redhat.com']
 
   s.summary       = 'Ruby gem for use with Product-Definition-Center'
   s.description   = 'API for PDC'
