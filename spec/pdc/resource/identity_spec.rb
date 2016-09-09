@@ -28,6 +28,14 @@ describe ModelWithIdentity do
     end
   end
 
+  describe 'url' do
+    it 'returns url with variables expanded for an object' do
+      instance = subject.new(subject.primary_key => :foobar)
+      expected_url = 'https://pdc.host.dev.eng.pek2.redhat.com/rest_api/fixtures/model%2Dwith%2Didentities/foobar'
+      instance.url.must_equal expected_url
+    end
+  end
+
   describe 'new' do
     it 'returns nil for id' do
       object = subject.new

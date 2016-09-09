@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/releases/rhel-7.1/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Sat, 10 Sep 2016 03:41:04 GMT
+      server:
+      - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.1e-fips mod_auth_kerb/5.4
+        mod_wsgi/3.4 Python/2.7.5
+      expires:
+      - Sat, 10 Sep 2016 03:41:34 GMT
+      vary:
+      - Accept,Cookie
+      last-modified:
+      - Thu, 08 Sep 2016 05:59:08 GMT
+      allow:
+      - GET, PUT, PATCH, HEAD, OPTIONS
+      cache-control:
+      - max-age=30
+      x-frame-options:
+      - SAMEORIGIN
+      transfer-encoding:
+      - chunked
+      content-type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"release_id":"rhel-7.1","short":"rhel","version":"7.1","name":"Red
+        Hat Enterprise Linux","base_product":null,"active":true,"product_version":"rhel-7","release_type":"ga","compose_set":["RHEL-7.1-20140507.2","RHEL-7.1-20140708.n.0","RHEL-7.1-20150219.1"],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null}'
+    http_version: 
+  recorded_at: Sat, 10 Sep 2016 03:41:04 GMT
+recorded_with: VCR 3.0.3
