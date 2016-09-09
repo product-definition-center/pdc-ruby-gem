@@ -24,7 +24,7 @@ module PDC::Request
 
       # uses the token passed or fetches one only once
       def token
-        @token ||= options[:token] || TokenFetcher.fetch(options[:token_url])
+        @token ||= options[:token] || TokenFetcher.fetch
       end
   end
 end
