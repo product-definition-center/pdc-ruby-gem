@@ -57,6 +57,30 @@ describe PDC do
       assert_requested releases, times: 3
     end
 
+    it 'will not cache PDC.token call' do
+      token = stub_request(:get, token_url).to_return_json(token: 'foobar')
+
+      PDC.configure { |pdc| pdc.site = site }
+      assert_not_requested token
+
+      PDC.token.must_equal 'foobar'
+      PDC.token.must_equal 'foobar'
+
+      assert_requested token, times: 2
+    end
+
+    it 'will not fetch token if already set' do
+      token = stub_request(:get, token_url).to_return_json(token: 'foobar')
+
+      PDC.configure do |pdc|
+        pdc.site = site
+        pdc.token = :a_known_token
+      end
+
+      PDC.token.must_equal :a_known_token
+      assert_not_requested token
+    end
+
     it 'raises TokenFetchFailed when fails' do
       token = stub_request(:get, token_url).to_return_json(
         { detail: 'Not found' },
@@ -84,7 +108,6 @@ describe PDC do
     it 'allows default site to be overridden ' do
       PDC.configure do |config|
         config.site = 'http://localhost:8888'
-        config.token = :foo
       end
       PDC.config.site.must_equal 'http://localhost:8888'
     end

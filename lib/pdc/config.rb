@@ -9,7 +9,6 @@ module PDC
   #
   #   :site               => 'http://localhost:2990',
   #   :ssl_verify_mode    => OpenSSL::SSL::VERIFY_PEER,
-  #   :use_ssl            => true,
   #   :username           => nil,
   #   :password           => nil,
   #   :auth_type          => :oauth
@@ -24,7 +23,6 @@ module PDC
       :site,
       :api_root,
 
-      :use_ssl,
       :ssl_verify_mode,
 
       :requires_token,
@@ -42,7 +40,6 @@ module PDC
         # site config
         self.site                = 'http://localhost:8000'
         self.api_root            = 'rest_api/'
-        self.use_ssl             = true
         self.ssl_verify_mode     = OpenSSL::SSL::VERIFY_PEER
 
         # token and authentication
@@ -90,19 +87,28 @@ module PDC
     end
 
     def token
-      config.token || Request::TokenFetcher.fetch(token_url)
+      return unless config.requires_token
+      config.token || Request::TokenFetcher.fetch
     end
 
     private
 
       def apply_config
         reset_logger
+        reset_token_fetcher
         reset_base_connection
       end
 
       def reset_logger
         PDC.logger = Logger.new(nil) unless config.enable_logging
         logger.level = Logger.const_get(config.log_level.upcase)
+      end
+
+      def reset_token_fetcher
+        Request::TokenFetcher.configure do |c|
+          c.url = token_url
+          c.ssl_verify_mode = config.ssl_verify_mode
+        end
       end
 
       # resets and returns the +Faraday+ +connection+ object
@@ -116,7 +122,7 @@ module PDC
 
         PDC::Base.connection = Faraday.new(faraday_config) do |c|
           c.request   :append_slash_to_path
-          c.request   :pdc_token, token: config.token, token_url: token_url if config.requires_token
+          c.request   :pdc_token, token: config.token if config.requires_token
 
           c.response  :logger, config.logger
           c.response  :pdc_paginator
