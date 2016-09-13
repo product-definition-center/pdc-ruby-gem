@@ -1,5 +1,6 @@
 module PDC::V1
   class ReleaseVariant < PDC::Base
+    self.primary_key = :id
 
     attributes :release, :uid, :name, :type, :arches
 

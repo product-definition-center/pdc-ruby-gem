@@ -28,8 +28,10 @@ Minitest::Reporters.use! [
 # require all support files
 Dir[File.expand_path('../support/**/*.rb', __FILE__)].each { |f| require f }
 
+PDC_SITE = 'https://pdc.host.dev.eng.pek2.redhat.com/'
+
 PDC.configure do |config|
-  config.site = 'https://pdc.host.dev.eng.pek2.redhat.com/'
+  config.site = PDC_SITE
   config.requires_token = false
   config.disable_caching = true
 ###  config.log_level = :debug   # enable to see details log
