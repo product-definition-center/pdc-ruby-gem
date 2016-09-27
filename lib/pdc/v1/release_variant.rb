@@ -8,11 +8,16 @@ module PDC::V1
       Release.find(attributes[:release])
     end
 
-    def url
-      URI.join(PDC.config.site, PDC.config.api_root,
-               PDC::Resource::Path.new(self.class.resource_path + '/(:release)/(:uid)', attributes).expanded).to_s
-    end
+    ### NOTE
+    # ReleaseVariant is different from other resources in the way
+    # its url is created so it requires special handling
+    def initialize(attrs = {})
+      super
 
+      instance_uri = self.class.resource_path + '/(:release)/(:uid)'
+      instance_path = PDC::Resource::Path.new(instance_uri, attrs).expanded
+      @url = connection.build_url(instance_path).to_s
+    end
 
     # attribute_rename :release, :release_id
 

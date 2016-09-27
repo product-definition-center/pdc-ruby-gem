@@ -20,4 +20,14 @@ describe :find do
     variant.v_id.must_equal 'v2'
     variant.title.must_equal 'variant'
   end
+
+  describe 'url' do
+    it 'returns url for resources fetched from remote' do
+      stub_get('products/1')
+        .to_return_json(data: [{ product_id: 1, title: 'foobar' }])
+      instance = Fixtures::Product.find(1)
+      expected_url = Fixtures::Base.connection.build_url('fixtures/products/1').to_s
+      instance.url.must_equal expected_url
+    end
+  end
 end

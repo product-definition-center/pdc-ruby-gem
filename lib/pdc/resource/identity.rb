@@ -65,10 +65,6 @@ module PDC::Resource
       Path.new(self.class.uri.to_s, attributes).expanded
     end
 
-    def url
-      URI.join(PDC.config.site, PDC.config.api_root, uri).to_s
-    end
-
     private
       # helper method so that primary_key can be called directly
       # from an instance
