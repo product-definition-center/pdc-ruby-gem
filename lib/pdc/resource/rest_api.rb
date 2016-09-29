@@ -29,6 +29,13 @@ module PDC::Resource
         request(:get, uri, query)
       end
     end # classmethod
+
+    def initialize(attr = {})
+      super
+      @url = connection.build_url(uri).to_s
+    end
+    attr_reader :url
+
   end
 end
 

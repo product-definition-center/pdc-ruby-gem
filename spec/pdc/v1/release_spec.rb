@@ -51,4 +51,18 @@ describe PDC::V1::Release do
       releases.must_equal [rhel7_1] * variants.length
     end
   end
+
+  describe '#url' do
+    it 'returns url of a release' do
+      rhel7_1 = release.find('rhel-7.1')
+      rhel7_1.url.must_equal(PDC_SITE + 'rest_api/v1/releases/rhel-7.1')
+    end
+
+    it 'returns url of a release_variant' do
+      rhel7_1 = release.find('rhel-7.1')
+      rhel7_1.variants.all.each do |v|
+        v.url.must_equal(PDC_SITE + 'rest_api/v1/release%2Dvariants/rhel-7.1/' + v.uid)
+      end
+    end
+  end
 end
