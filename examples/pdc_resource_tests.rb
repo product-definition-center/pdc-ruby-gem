@@ -171,3 +171,20 @@ describe PDC::V1::ReleaseVariant do
     end
   end
 end
+
+# using prod server to test PDC::V1::ReleaseRpmMapping
+pdc = server[:prod]
+
+PDC.configure do |config|
+  config.site = pdc[:site]
+  auth_token = pdc[:token]
+  config.token = pdc[:token].call if auth_token
+  config.requires_token = auth_token.present? # to_bool
+end
+
+describe PDC::V1::ReleaseRpmMapping do
+  let(:mapping) {PDC::V1::ReleaseRpmMapping.where(:release_id => 'ceph-2.1-updates@rhel-7', :package => 'ceph').first}
+  it 'must has compose' do
+    mapping.mapping.must_be_instance_of OpenStruct
+  end
+end
