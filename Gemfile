@@ -26,6 +26,9 @@ group :test do
   gem 'rack', '~> 1.4.7'
   gem 'vcr'
   gem 'timecop'
+  gem 'pronto'
+  gem 'pronto-rubocop'
+  gem 'pronto-flay'
 end
 
 # Specify your gem's dependencies in pdc-ruby.gemspec
