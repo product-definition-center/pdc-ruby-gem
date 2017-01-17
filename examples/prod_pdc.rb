@@ -11,4 +11,4 @@ def main
   ap releases
 end
 
-main if __FILE__ == $0
+main if __FILE__ == $PROGRAM_NAME

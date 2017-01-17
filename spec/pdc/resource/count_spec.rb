@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-#WebMock.disable!  # enable to re-record
+# WebMock.disable!  # enable to re-record
 
 describe PDC do
   before do
@@ -38,7 +38,7 @@ describe PDC do
       pg2 = arch.page(2)
       pg2_count = pg2.all.length
 
-      arches_count = pg2.count      # must return all arches count
+      arches_count = pg2.count # must return all arches count
       arches_count.wont_equal pg2_count
     end
   end

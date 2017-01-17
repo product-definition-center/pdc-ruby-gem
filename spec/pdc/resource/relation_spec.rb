@@ -8,11 +8,11 @@ class SearchableModel < Base
     [
       { name: 'foobar-1', product: 'prod' },
       { name: 'foobar-2', product: 'prod' },
-      { name: 'foobar-3', product: 'prod' },
+      { name: 'foobar-3', product: 'prod' }
     ]
   end
 
-  def self.fetch(params)
+  def self.fetch(_params)
     response = OpenStruct.new(
       body: { data: fake_data },
       status: 200,
@@ -25,7 +25,6 @@ end
 
 describe SearchableModel do
   subject { SearchableModel }
-
 
   describe '#where' do
     it 'returns a scope with params' do

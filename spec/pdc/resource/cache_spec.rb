@@ -28,7 +28,6 @@ def record_cache_access(&block)
   cache_access
 end
 
-
 describe 'Caching' do
   before do
     @old_config = PDC.config

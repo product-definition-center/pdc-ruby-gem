@@ -13,7 +13,6 @@ class Minitest::Spec
   include PDC::Minitest::FixtureExtentions
 end
 
-
 # fixtures for testing the PDC::Resource::Modules
 module Fixtures
   class EmptyModel
@@ -63,7 +62,6 @@ module Fixtures
   end
 end
 
-
 # stub pdc
 module Fixtures
   class JSONParser < Faraday::Response::Middleware
@@ -75,13 +73,13 @@ module Fixtures
         errors: json[:errors]
       }
     rescue MultiJson::ParseError => exception
-      { errors: { base: [ error: exception.message ] } }
+      { errors: { base: [error: exception.message] } }
     end
   end
 
   class Base < PDC::Base
     # stub the connection
-    SITE = 'http://pdc.eng.redhat.com'
+    SITE = 'http://pdc.eng.redhat.com'.freeze
     self.connection = Faraday.new(url: SITE) do |faraday|
       faraday.request   :json
       faraday.use       JSONParser

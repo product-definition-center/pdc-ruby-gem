@@ -3,7 +3,7 @@ module PDC::Resource
   PAGINATION_KEYS = [
     :resource_count,
     :previous_page,
-    :next_page,
+    :next_page
   ].freeze
 
   module Pagination

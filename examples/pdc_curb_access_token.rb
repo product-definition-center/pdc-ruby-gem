@@ -7,7 +7,7 @@ def obtain_token
   url = PDC.config.site + PDC.config.rest_api_path + '/' + PDC.config.token_obtain_path
 
   c = Curl::Easy.new(url) do |request|
-    request.headers["Accept"] = "application/json"
+    request.headers['Accept'] = 'application/json'
     request.http_auth_types = :gssnegotiate
 
     # The curl man page (http://curl.haxx.se/docs/manpage.html) specifes

@@ -14,18 +14,17 @@ module PDC::Resource
   class ValueParser
     class << self
       def parse(value)
-        case
-        when value.is_a?(Array)     then value.map { |v| parse(v) }
-        when value.is_a?(Hash)      then OpenStruct.new(parse_hash(value))
+        if value.is_a?(Array) then value.map { |v| parse(v) }
+        elsif value.is_a?(Hash) then OpenStruct.new(parse_hash(value))
         else value
         end
       end
 
       private
 
-        def parse_hash(hash)
-          hash.map { |k, v| [k.to_sym, parse(v)] }.to_h
-        end
+      def parse_hash(hash)
+        hash.map { |k, v| [k.to_sym, parse(v)] }.to_h
+      end
     end
   end
 end

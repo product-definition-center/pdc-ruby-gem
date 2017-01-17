@@ -27,7 +27,7 @@ module PDC::Resource
       end
 
       def attributes_metadata
-        @attributes_metadata ||= HashWithIndifferentAccess.new(primary_key => default_metadata )
+        @attributes_metadata ||= HashWithIndifferentAccess.new(primary_key => default_metadata)
       end
 
       def attribute_parser(name)
@@ -38,30 +38,30 @@ module PDC::Resource
 
       private
 
-        def default_metadata
-          { parser: ValueParser }
-        end
+      def default_metadata
+        { parser: ValueParser }
+      end
 
-        def define_methods_in_container(names)
-          instance_method_container.module_eval do
-            Array.wrap(names).each do |name|
-              define_method(name) do
-                attribute(name)
-              end
+      def define_methods_in_container(names)
+        instance_method_container.module_eval do
+          Array.wrap(names).each do |name|
+            define_method(name) do
+              attribute(name)
             end
           end
         end
+      end
 
-        # By adding instance methods via an included module, they become
-        # overridable with "super".
-        # see: http://thepugautomatic.com/2013/07/dsom/
-        def instance_method_container
-          unless @instance_method_container
-            @instance_method_container = Module.new
-            include @instance_method_container
-          end
-          @instance_method_container
+      # By adding instance methods via an included module, they become
+      # overridable with "super".
+      # see: http://thepugautomatic.com/2013/07/dsom/
+      def instance_method_container
+        unless @instance_method_container
+          @instance_method_container = Module.new
+          include @instance_method_container
         end
+        @instance_method_container
+      end
     end # class methods
 
     def initialize(attributes = {})
@@ -90,10 +90,9 @@ module PDC::Resource
     end
 
     def method_missing(name, *args, &block)
-      case
-      when attribute?(name)   then attribute(name)
-      when predicate?(name)   then predicate(name)
-      when setter?(name)      then set_attribute(name, args.first)
+      if attribute?(name) then attribute(name)
+      elsif predicate?(name)   then predicate(name)
+      elsif setter?(name)      then set_attribute(name, args.first)
       else super
       end
     end
@@ -138,7 +137,5 @@ module PDC::Resource
     def inspect_attributes
       attributes.map { |k, v| "#{k}: #{v.inspect}" }.join(' ')
     end
-
   end
 end
-

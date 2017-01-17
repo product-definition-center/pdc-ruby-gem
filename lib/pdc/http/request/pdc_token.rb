@@ -1,5 +1,4 @@
 module PDC::Request
-
   # Adds TokenAuthentication to request header. Uses the token if passed
   # else fetches token using the TokenFetcher to get the token once
   class Token < Faraday::Middleware
@@ -20,11 +19,11 @@ module PDC::Request
 
     private
 
-      attr_reader :options
+    attr_reader :options
 
-      # uses the token passed or fetches one only once
-      def token
-        @token ||= options[:token] || TokenFetcher.fetch
-      end
+    # uses the token passed or fetches one only once
+    def token
+      @token ||= options[:token] || TokenFetcher.fetch
+    end
   end
 end

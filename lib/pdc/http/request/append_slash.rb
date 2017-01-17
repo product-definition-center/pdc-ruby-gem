@@ -2,7 +2,7 @@ module PDC
   class Request::AppendSlashToPath < Faraday::Middleware
     include PDC::Logging
 
-    Faraday::Request.register_middleware :append_slash_to_path => self
+    Faraday::Request.register_middleware append_slash_to_path: self
 
     def call(env)
       logger.debug "\n..... append slash .........................................."

@@ -55,7 +55,7 @@ module PDC::Resource
     def ==(other)
       other.instance_of?(self.class) && id? && id == other.id
     end
-    alias :eql? :==
+    alias eql? ==
 
     def as_json(options = nil)
       attributes.as_json(options)
@@ -66,10 +66,11 @@ module PDC::Resource
     end
 
     private
-      # helper method so that primary_key can be called directly
-      # from an instance
-      def primary_key
-        self.class.primary_key
-      end
+
+    # helper method so that primary_key can be called directly
+    # from an instance
+    def primary_key
+      self.class.primary_key
+    end
   end
 end

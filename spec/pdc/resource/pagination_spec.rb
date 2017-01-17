@@ -14,7 +14,7 @@ describe PDC do
     let(:release_variant) { PDC::V1::ReleaseVariant }
 
     it 'can iterate using each' do
-      count = arch.count   # makes single call
+      count = arch.count # makes single call
 
       all = arch.scoped.each_with_object([]) do |a, o|
         o << a
@@ -37,13 +37,13 @@ describe PDC do
     subject { PDC::V1::Arch }
     it 'returns resources on that page' do
       pg2 = subject.page(2)
-      resources =  pg2.contents!
+      resources = pg2.contents!
       resources.length.must_equal 20
     end
 
     it 'should not be in the list of attributes' do
       pg2 = subject.page(2)
-      arch =  pg2.all.first
+      arch = pg2.all.first
       arch.attributes.wont_include :page
       arch.attributes.wont_include 'page'
     end

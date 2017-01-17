@@ -2,7 +2,7 @@ module PDC::Response
   class Paginator < Faraday::Response::Middleware
     include PDC::Logging
 
-    Faraday::Response.register_middleware :pdc_paginator => self
+    Faraday::Response.register_middleware pdc_paginator: self
 
     def parse(json)
       logger.debug "\n.....paginate json ....................................."
@@ -18,7 +18,7 @@ module PDC::Response
         # schema://host:port/ of the next and previous
 
         next_page:        request_uri(metadata.delete(:next)),
-        previous_page:    request_uri(metadata.delete(:previous)),
+        previous_page:    request_uri(metadata.delete(:previous))
       }
 
       logger.debug '... after parsing pagination data:'
@@ -35,9 +35,8 @@ module PDC::Response
 
     def paginated?(metadata)
       metadata[:count].is_a?(Numeric) &&
-      metadata.key?(:next) &&
-      metadata.key?(:previous)
+        metadata.key?(:next) &&
+        metadata.key?(:previous)
     end
-
   end
 end

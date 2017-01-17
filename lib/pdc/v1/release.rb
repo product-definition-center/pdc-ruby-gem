@@ -12,7 +12,7 @@ module PDC
 
       # TODO: implement using has_many association
       # has_many :variants, class_name: 'PDC::V1::ReleaseVariant',
-               # uri: "#{api_path}/release-variants/?release=:release_id"
+      # uri: "#{api_path}/release-variants/?release=:release_id"
     end
   end
 end

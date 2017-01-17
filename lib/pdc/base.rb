@@ -8,7 +8,7 @@ module PDC
     include PDC::Resource::Scopes
     include PDC::Resource::RestApi
 
-    scope :page, ->(value) { where(:page => value) }
-    scope :page_size, ->(value) { where(:page_size => value) }
+    scope :page, ->(value) { where(page: value) }
+    scope :page_size, ->(value) { where(page_size: value) }
   end
 end

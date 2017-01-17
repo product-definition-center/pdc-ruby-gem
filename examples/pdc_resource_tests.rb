@@ -183,7 +183,12 @@ PDC.configure do |config|
 end
 
 describe PDC::V1::ReleaseRpmMapping do
-  let(:mapping) {PDC::V1::ReleaseRpmMapping.where(:release_id => 'ceph-2.1-updates@rhel-7', :package => 'ceph').first}
+  let(:mapping) do
+    PDC::V1::ReleaseRpmMapping.where(
+      release_id: 'ceph-2.1-updates@rhel-7',
+      package: 'ceph'
+    ).first
+  end
   it 'must has compose' do
     mapping.mapping.must_be_instance_of OpenStruct
   end

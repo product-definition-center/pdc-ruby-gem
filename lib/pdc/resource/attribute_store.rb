@@ -8,15 +8,11 @@ module PDC::Resource
 
     private
 
-      def parse_value(value)
-
-        case
-        when value.is_a?(PDC::Base)           then value.attributes.to_params
-        when value.is_a?(Array)               then value.map { |v| parse_value(v) }
-        else value
-        end
+    def parse_value(value)
+      if value.is_a?(PDC::Base) then value.attributes.to_params
+      elsif value.is_a?(Array) then value.map { |v| parse_value(v) }
+      else value
       end
-
+    end
   end
 end
-
