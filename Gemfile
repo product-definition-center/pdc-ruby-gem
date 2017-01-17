@@ -4,7 +4,6 @@ group :tools do
   gem 'guard', '<= 2.12.0'
   gem 'guard-minitest', '~> 2.4.4'
   gem 'guard-shell'
-  gem 'rubocop'
 end
 
 group :development do
@@ -21,14 +20,18 @@ group :test do
   gem 'minitest-focus'
   gem 'minitest-reporters', '~> 1.1.9'
   gem 'mocha'
-  gem 'pronto'
-  gem 'pronto-flay', require: false
-  gem 'pronto-rubocop', require: false
   gem 'rack', '~> 1.4.7'
   gem 'simplecov'
   gem 'timecop'
   gem 'vcr'
   gem 'webmock', '~> 1.18.0'
+end
+
+group :development, :test do
+  # Pronto
+  gem 'pronto'
+  gem 'pronto-flay', require: false
+  gem 'pronto-rubocop', require: false
 end
 
 # Specify your gem's dependencies in pdc-ruby.gemspec

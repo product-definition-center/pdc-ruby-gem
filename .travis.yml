@@ -1,4 +1,5 @@
 language: ruby
+cache: bundler
 rvm:
 - 2.2.2
 addons:
@@ -14,8 +15,16 @@ install:
 - export GITHUB_ACCESS_TOKEN=$GH_TOKEN
 script:
 - bundle exec rake test
-- if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then make deploy_doc; fi
-- if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then bundle exec pronto run -f github_pr -c origin/${TRAVIS_BRANCH}; fi
+- >
+  if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
+    bundle exec pronto run -f github_pr -c origin/${TRAVIS_BRANCH}
+  fi
+
+after_success:
+- >
+  [ "$TRAVIS_BRANCH" = "master" ] &&
+  [ "$TRAVIS_PULL_REQUEST" = "false" ] &&
+    make deploy_doc
 env:
   global:
   - GH_REPO="product-definition-center/pdc-ruby-gem"
