@@ -2,9 +2,6 @@ AllCops:
   DisplayCopNames: true
   DisplayStyleGuide: true
 
-  Exclude:
-    - spec/**/*
-
 Style/Documentation:
   Enabled: false
 
