@@ -21,6 +21,9 @@ group :test do
   gem 'webmock', '~> 1.18.0'
   gem 'minitest-reporters', '~> 1.1.9'
   gem 'minitest-focus'
+  gem 'pronto'
+  gem 'pronto-flay', require: false
+  gem 'pronto-rubocop', require: false
   gem 'simplecov'
   gem 'coveralls'
   gem 'rack', '~> 1.4.7'
