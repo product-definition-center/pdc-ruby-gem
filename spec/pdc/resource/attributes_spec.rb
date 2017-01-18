@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe PDC::Resource::AttributeStore  do
+describe PDC::Resource::AttributeStore do
   subject { PDC::Resource::AttributeStore }
 
   it '#to_params' do
@@ -165,7 +165,6 @@ describe 'nested hash attributes' do
   end
 end
 
-
 describe 'Custom ValueParser' do
   subject { CustomParserModel }
   it 'must return fixnum for age' do
@@ -184,48 +183,49 @@ end
 
 # class AttributesTest < MiniTest::Test
 
-  # def test_equality
-    # assert_equal Product.new(id: 2, title: 'Fish'), Product.new(id: 2, title: 'Fish')
-    # refute_equal Product.new(id: 2, title: 'Fish'), Product.new(id: 1, title: 'Fish')
-    # refute_equal Product.new(id: 2, title: 'Fish'), 'not_a_spyke_object'
-    # refute_equal Product.new(id: 2, title: 'Fish'), Image.new(id: 2, title: 'Fish')
-    # refute_equal Product.new, Product.new
-    # refute_equal StepImage.new(id: 1), Image.new(id: 1)
-  # end
+# def test_equality
+# assert_equal Product.new(id: 2, title: 'Fish'), Product.new(id: 2, title: 'Fish')
+# refute_equal Product.new(id: 2, title: 'Fish'), Product.new(id: 1, title: 'Fish')
+# refute_equal Product.new(id: 2, title: 'Fish'), 'not_a_spyke_object'
+# refute_equal Product.new(id: 2, title: 'Fish'), Image.new(id: 2, title: 'Fish')
+# refute_equal Product.new, Product.new
+# refute_equal StepImage.new(id: 1), Image.new(id: 1)
+# end
 
-  # def test_uniqueness
-    # product_1 = Product.new(id: 1)
-    # product_2 = Product.new(id: 1)
-    # product_3 = Product.new(id: 2)
-    # image_1 = Image.new(id: 2)
-    # records = [product_1, product_2, product_3, image_1]
-    # assert_equal [product_1, product_3, image_1], records.uniq
-  # end
+# def test_uniqueness
+# product_1 = Product.new(id: 1)
+# product_2 = Product.new(id: 1)
+# product_3 = Product.new(id: 2)
+# image_1 = Image.new(id: 2)
+# records = [product_1, product_2, product_3, image_1]
+# assert_equal [product_1, product_3, image_1], records.uniq
+# end
 
-  # def test_super_with_explicit_attributes
-    # assert_equal nil, Product.new.description
-  # end
+# def test_super_with_explicit_attributes
+# assert_equal nil, Product.new.description
+# end
 
-  # def test_inheriting_explicit_attributes
-    # assert_equal nil, Image.new.description
-    # assert_equal nil, Image.new.caption
-    # assert_raises NoMethodError do
-      # Image.new.note
-    # end
-    # assert_equal nil, StepImage.new.description
-    # assert_equal nil, StepImage.new.caption
-    # assert_equal nil, StepImage.new.note
-  # end
+# def test_inheriting_explicit_attributes
+# assert_equal nil, Image.new.description
+# assert_equal nil, Image.new.caption
+# assert_raises NoMethodError do
+# Image.new.note
+# end
+# assert_equal nil, StepImage.new.description
+# assert_equal nil, StepImage.new.caption
+# assert_equal nil, StepImage.new.note
+# end
 
-  # def test_inspect
-    # product = Product.new(id: 2, title: 'Pizza', description: 'Delicious')
-    # assert_equal '#<Product(products/(:id)) id: 2 title: "Pizza" description: "Delicious">', product.inspect
-    # product = Product.new
-    # assert_equal '#<Product(products/(:id)) id: nil >', product.inspect
-    # require 'pry'; binding.pry
-    # user = Product.new.build_user
-    # assert_equal '#<User(users/:uuid) id: nil >', user.inspect
-    # group = Product.new.groups.build
-    # assert_equal '#<Group(products/:product_id/groups/(:id)) id: nil product_id: nil>', group.inspect
-  # end
+# def test_inspect
+# product = Product.new(id: 2, title: 'Pizza', description: 'Delicious')
+# output = '#<Product(products/(:id)) id: 2 title: "Pizza" description: "Delicious">'
+# assert_equal output, product.inspect
+# product = Product.new
+# assert_equal '#<Product(products/(:id)) id: nil >', product.inspect
+# require 'pry'; binding.pry
+# user = Product.new.build_user
+# assert_equal '#<User(users/:uuid) id: nil >', user.inspect
+# group = Product.new.groups.build
+# assert_equal '#<Group(products/:product_id/groups/(:id)) id: nil product_id: nil>', group.inspect
+# end
 # end

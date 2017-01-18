@@ -5,20 +5,20 @@ module PDC::Response
   class Parser < Faraday::Response::Middleware
     include PDC::Logging
 
-    Faraday::Response.register_middleware :pdc_json_parser => self
+    Faraday::Response.register_middleware pdc_json_parser: self
 
     def parse(body)
       logger.debug "\n.....parse to json ....................................."
       logger.debug self.class
 
-      logger.debug '... parsing' +  body.to_s.truncate(55)
+      logger.debug '... parsing' + body.to_s.truncate(55)
       begin
         json = MultiJson.load(body, symbolize_keys: true)
       rescue MultiJson::ParseError => e
         raise PDC::JsonParseError, e
       end
 
-      res = {
+      {
         data:     extract_data(json),     # Always an Array
         errors:   extract_errors(json),   #
         metadata: extract_metadata(json)  # a hash
@@ -29,7 +29,7 @@ module PDC::Response
 
     def extract_data(json)
       return [] if error?(json)
-      return json[:results] if has_metadata?(json)
+      return json[:results] if metadata_present?(json)
       Array.wrap(json)
     end
 
@@ -38,11 +38,11 @@ module PDC::Response
     end
 
     def extract_metadata(json)
-      return json.except(:details, :results) if has_metadata?(json)
+      return json.except(:details, :results) if metadata_present?(json)
       data_only?(json) ? { count: json.length, next: nil, previous: nil } : {}
     end
 
-    def has_metadata?(json)
+    def metadata_present?(json)
       return false if data_only?(json) || error?(json)
 
       json[:results].is_a?(Array) &&

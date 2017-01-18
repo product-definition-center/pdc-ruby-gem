@@ -13,7 +13,8 @@ module PDC::Resource
           response = connection.send(method) do |request|
             request.url path, query
           end
-          payload[:url], payload[:status] = response.env.url, response.status
+          payload[:url] = response.env.url
+          payload[:status] = response.status
           PDC::Http::Result.new(response)
         end
       end
@@ -35,7 +36,5 @@ module PDC::Resource
       @url = connection.build_url(uri).to_s
     end
     attr_reader :url
-
   end
 end
-

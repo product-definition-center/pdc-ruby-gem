@@ -22,7 +22,6 @@ module PDC::V1
     # attribute_rename :release, :release_id
 
     # belongs_to :release, class_name: 'PDC::V1::Release',
-               # uri: "#{api_path}/releases/:release_id"
+    # uri: "#{api_path}/releases/:release_id"
   end
 end
-

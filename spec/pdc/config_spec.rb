@@ -147,8 +147,8 @@ describe PDC do
       PDC::Base.connection.must_equal old_connection
 
       new_connection = PDC.configure do |config|
-       config.site = 'http://localhost:8888'
-       config.token = :foobar
+        config.site = 'http://localhost:8888'
+        config.token = :foobar
       end
       PDC::Base.connection.must_equal new_connection
       new_connection.wont_equal old_connection

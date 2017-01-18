@@ -16,8 +16,8 @@ require 'webmock/minitest'
 require 'pdc'
 
 reporter_options = {
-  :color => true,
-  :slow_count => 3
+  color: true,
+  slow_count: 3
 }
 
 Minitest::Reporters.use! [
@@ -28,13 +28,13 @@ Minitest::Reporters.use! [
 # require all support files
 Dir[File.expand_path('../support/**/*.rb', __FILE__)].each { |f| require f }
 
-PDC_SITE = 'https://pdc.host.dev.eng.pek2.redhat.com/'
+PDC_SITE = 'https://pdc.host.dev.eng.pek2.redhat.com/'.freeze
 
 PDC.configure do |config|
   config.site = PDC_SITE
   config.requires_token = false
   config.disable_caching = true
-###  config.log_level = :debug   # enable to see details log
+  ###  config.log_level = :debug   # enable to see details log
 end
 
 # TODO: decide if this is okay to do

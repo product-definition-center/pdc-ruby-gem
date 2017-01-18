@@ -1,0 +1,23 @@
+AllCops:
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+
+  Exclude:
+    - spec/**/*
+
+Style/Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+  EnforcedStyle: compact
+
+Metrics/LineLength:
+  Max: 100
+
+Metrics/MethodLength:
+  Max: 25
+
+Metrics/AbcSize:
+  Max: 25
+

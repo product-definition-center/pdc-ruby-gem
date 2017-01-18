@@ -1,11 +1,11 @@
 #!/usr/bin/env ruby
 
-require "bundler/setup"
-require "pry"
-require "ap"
+require 'bundler/setup'
+require 'pry'
+require 'ap'
 
-require "pdc"
-require_relative "../spec/support/fixtures"
+require 'pdc'
+require_relative '../spec/support/fixtures'
 
 include Fixtures
 Pry.start

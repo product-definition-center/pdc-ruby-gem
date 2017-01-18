@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-#WebMock.disable!  # enable to re-record
+# WebMock.disable!  # enable to re-record
 
 describe PDC::V1::Release do
   before do
@@ -47,7 +47,7 @@ describe PDC::V1::Release do
       rhel7_1 = release.find('rhel-7.1')
       variants = rhel7_1.variants.all
       variants.length.must_equal 12
-      releases = variants.map {|v| v.release }
+      releases = variants.map(&:release)
       releases.must_equal [rhel7_1] * variants.length
     end
   end

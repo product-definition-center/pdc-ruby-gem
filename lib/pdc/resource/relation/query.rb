@@ -11,4 +11,3 @@ module PDC::Resource
     end
   end
 end
-

@@ -3,7 +3,6 @@ require 'json'
 
 module PDC::Request
   module TokenFetcher
-
     module Configuration
       VALID_KEYS = [:ssl_verify_mode, :url].freeze
 

@@ -16,9 +16,9 @@ module PDC::Resource
     end
 
     private
+
     def result
       @result ||= fetch(clone)
     end
   end
 end
-

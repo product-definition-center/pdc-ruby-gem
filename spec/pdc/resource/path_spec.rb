@@ -17,14 +17,19 @@ describe PDC::Resource::Path do
     assert_equal '/users/1/recipes', path.expanded
   end
 
-
   it 'nested_resource_path' do
-    assert_equal '/users/1/recipes/2', subject.new('/users/:user_id/recipes/:id', user_id: 1, id: 2).expanded
+    expanded_path = subject.new(
+      '/users/:user_id/recipes/:id',
+      user_id: 1,
+      id: 2
+    ).expanded
+    assert_equal '/users/1/recipes/2', expanded_path
   end
 
   it 'raises if required_params are missing' do
-    lambda {
-      subject.new('/users/:user_id/recipes/(:id)', id: 2).expanded
-    }.must_raise PDC::InvalidPathError, 'Missing required params: user_id in /users/:user_id/recipes/(:id)'
+    l = -> { subject.new('/users/:user_id/recipes/(:id)', id: 2).expanded }
+
+    err = 'Missing required params: user_id in /users/:user_id/recipes/(:id)'
+    l.must_raise PDC::InvalidPathError, err
   end
 end

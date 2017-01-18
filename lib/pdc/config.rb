@@ -1,6 +1,7 @@
 require 'faraday-http-cache'
 require 'pdc/http/request/token_fetcher'
 
+# rubocop:disable ModuleLength
 module PDC
   # This class is the main access point for all PDC::Resource instances.
   #
@@ -34,7 +35,7 @@ module PDC
       :logger,
 
       :cache_store,
-      :disable_caching,
+      :disable_caching
     ) do
       def initialize
         # site config
@@ -93,61 +94,60 @@ module PDC
 
     private
 
-      def apply_config
-        reset_logger
-        reset_token_fetcher
-        reset_base_connection
-      end
+    def apply_config
+      reset_logger
+      reset_token_fetcher
+      reset_base_connection
+    end
 
-      def reset_logger
-        PDC.logger = Logger.new(nil) unless config.enable_logging
-        logger.level = Logger.const_get(config.log_level.upcase)
-      end
+    def reset_logger
+      PDC.logger = Logger.new(nil) unless config.enable_logging
+      logger.level = Logger.const_get(config.log_level.upcase)
+    end
 
-      def reset_token_fetcher
-        Request::TokenFetcher.configure do |c|
-          c.url = token_url
-          c.ssl_verify_mode = config.ssl_verify_mode
+    def reset_token_fetcher
+      Request::TokenFetcher.configure do |c|
+        c.url = token_url
+        c.ssl_verify_mode = config.ssl_verify_mode
+      end
+    end
+
+    # resets and returns the +Faraday+ +connection+ object
+    # rubocop:disable AbcSize
+    def reset_base_connection
+      faraday_config = {
+        url:      api_url,
+        headers:  PDC::Request.default_headers,
+        ssl:      ssl_config
+      }
+
+      PDC::Base.connection = Faraday.new(faraday_config) do |c|
+        c.request   :append_slash_to_path
+        c.request   :pdc_token, token: config.token if config.requires_token
+
+        c.response  :logger, config.logger
+        c.response  :pdc_paginator
+        c.response  :pdc_json_parser
+        c.response  :raise_error
+        c.response  :pdc_raise_error
+
+        c.use       FaradayMiddleware::FollowRedirects
+
+        unless config.disable_caching
+          c.use Faraday::HttpCache, store: cache_store,
+                                    logger: PDC.logger,
+                                    instrumenter: ActiveSupport::Notifications
         end
+        c.adapter Faraday.default_adapter
       end
+    end
 
-      # resets and returns the +Faraday+ +connection+ object
-      def reset_base_connection
+    def ssl_config
+      { verify: config.ssl_verify_mode == OpenSSL::SSL::VERIFY_PEER }
+    end
 
-        faraday_config = {
-          url:      api_url,
-          headers:  PDC::Request.default_headers,
-          ssl:      ssl_config
-        }
-
-        PDC::Base.connection = Faraday.new(faraday_config) do |c|
-          c.request   :append_slash_to_path
-          c.request   :pdc_token, token: config.token if config.requires_token
-
-          c.response  :logger, config.logger
-          c.response  :pdc_paginator
-          c.response  :pdc_json_parser
-          c.response  :raise_error
-          c.response  :pdc_raise_error
-
-          c.use       FaradayMiddleware::FollowRedirects
-
-          unless config.disable_caching
-            c.use       Faraday::HttpCache, store: cache_store,
-                          logger: PDC.logger,
-                          instrumenter: ActiveSupport::Notifications
-          end
-          c.adapter   Faraday.default_adapter
-        end
-      end
-
-      def ssl_config
-        { verify: config.ssl_verify_mode == OpenSSL::SSL::VERIFY_PEER }
-      end
-
-      def cache_store
-        config.cache_store || ActiveSupport::Cache.lookup_store(:memory_store)
-      end
-
+    def cache_store
+      config.cache_store || ActiveSupport::Cache.lookup_store(:memory_store)
+    end
   end
 end

@@ -2,7 +2,6 @@ require 'uri_template'
 
 module PDC::Resource
   class Path
-
     def initialize(pattern, params = {})
       @pattern = pattern
       @params = params.symbolize_keys
@@ -36,7 +35,7 @@ module PDC::Resource
     end
 
     def pattern_with_rfc_style_parens
-      @pattern.gsub('(', '{').gsub(')', '}')
+      @pattern.tr('(', '{').tr(')', '}')
     end
 
     def validate_required_params!
@@ -56,8 +55,7 @@ module PDC::Resource
     end
 
     def required_params
-      @pattern.scan(/\/:(\w+)/).flatten.map(&:to_sym)
+      @pattern.scan(%r{/:(\w+)}).flatten.map(&:to_sym)
     end
   end
 end
-

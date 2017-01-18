@@ -13,7 +13,7 @@ module PDC::Resource
     attr_reader :klass
     attr_writer :params
 
-    alias :all :to_a
+    alias all to_a
 
     def initialize(klass, options = {})
       @klass = klass
@@ -63,19 +63,20 @@ module PDC::Resource
 
     private
 
-      def method_missing(name, *args, &block)
-        # pass anything that relation doesn't know to the klass
-        super unless klass.respond_to? name
+    def method_missing(name, *args, &block)
+      # pass anything that relation doesn't know to the klass
+      super unless klass.respond_to? name
 
-        with_scope { klass.send(name, *args, &block) }
-      end
+      with_scope { klass.send(name, *args, &block) }
+    end
 
-      # Keep hold of current scope while running a method on the class
-      def with_scope
-        previous, klass.current_scope = klass.current_scope, self
-        yield
-      ensure
-        klass.current_scope = previous
-      end
+    # Keep hold of current scope while running a method on the class
+    def with_scope
+      previous = klass.current_scope
+      klass.current_scope = self
+      yield
+    ensure
+      klass.current_scope = previous
+    end
   end
 end

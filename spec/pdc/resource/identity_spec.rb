@@ -66,7 +66,6 @@ describe CustomPrimaryKeyModel do
   end
 end
 
-
 describe V1::Foobar do
   subject { V1::Foobar }
   it 'must have a pkey' do
