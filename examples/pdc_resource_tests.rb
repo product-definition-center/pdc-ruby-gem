@@ -172,6 +172,19 @@ describe PDC::V1::ReleaseVariant do
   end
 end
 
+describe PDC::V1::ContentDeliveryRepo do
+  let(:repo_class) { PDC::V1::ContentDeliveryRepo }
+  let(:existing_repo) { repo_class.all!.first }
+
+  describe '#find' do
+    it 'must return a record' do
+      found = repo_class.find(existing_repo.id)
+      found.must_be_instance_of repo_class
+      found.name.must_equal existing_repo.name
+    end
+  end
+end
+
 # using prod server to test PDC::V1::ReleaseRpmMapping
 pdc = server[:prod]
 

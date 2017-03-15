@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/content%2Ddelivery%2Drepos/?release_id=ceph-2.1-updates%40rhel-7&service=pulp
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 16 Mar 2017 06:39:34 GMT
+      server:
+      - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.1e-fips mod_auth_kerb/5.4
+        mod_wsgi/3.4 Python/2.7.5
+      expires:
+      - Thu, 16 Mar 2017 06:40:04 GMT
+      vary:
+      - Accept,Cookie
+      last-modified:
+      - Thu, 16 Mar 2017 06:39:34 GMT
+      allow:
+      - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
+      cache-control:
+      - max-age=30
+      x-frame-options:
+      - SAMEORIGIN
+      transfer-encoding:
+      - chunked
+      content-type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"count":18,"next":null,"previous":null,"results":[{"id":34667,"release_id":"ceph-2.1-updates@rhel-7","variant_uid":"Client-Tools","arch":"x86_64","service":"pulp","repo_family":"dist","content_format":"rpm","content_category":"debug","name":"rhel-7-desktop-rhceph-2-tools-debug-rpms__7Client__x86_64","shadow":false,"product_id":68},{"id":34668,"release_id":"ceph-2.1-updates@rhel-7","variant_uid":"Client-Tools","arch":"x86_64","service":"pulp","repo_family":"dist","content_format":"rpm","content_category":"binary","name":"rhel-7-desktop-rhceph-2-tools-rpms__7Client__x86_64","shadow":false,"product_id":68},{"id":34669,"release_id":"ceph-2.1-updates@rhel-7","variant_uid":"Client-Tools","arch":"x86_64","service":"pulp","repo_family":"dist","content_format":"rpm","content_category":"source","name":"rhel-7-desktop-rhceph-2-tools-source-rpms__7Client__x86_64","shadow":false,"product_id":68},{"id":34670,"release_id":"ceph-2.1-updates@rhel-7","variant_uid":"ComputeNode-Tools","arch":"x86_64","service":"pulp","repo_family":"dist","content_format":"rpm","content_category":"debug","name":"rhel-7-for-hpc-node-rhceph-2-tools-debug-rpms__7ComputeNode__x86_64","shadow":false,"product_id":76},{"id":34671,"release_id":"ceph-2.1-updates@rhel-7","variant_uid":"ComputeNode-Tools","arch":"x86_64","service":"pulp","repo_family":"dist","content_format":"rpm","content_category":"binary","name":"rhel-7-for-hpc-node-rhceph-2-tools-rpms__7ComputeNode__x86_64","shadow":false,"product_id":76},{"id":34672,"release_id":"ceph-2.1-updates@rhel-7","variant_uid":"ComputeNode-Tools","arch":"x86_64","service":"pulp","repo_family":"dist","content_format":"rpm","content_category":"source","name":"rhel-7-for-hpc-node-rhceph-2-tools-source-rpms__7ComputeNode__x86_64","shadow":false,"product_id":76},{"id":34673,"release_id":"ceph-2.1-updates@rhel-7","variant_uid":"MON","arch":"x86_64","service":"pulp","repo_family":"dist","content_format":"rpm","content_category":"debug","name":"rhel-7-server-rhceph-2-mon-debug-rpms__7Server__x86_64","shadow":false,"product_id":286},{"id":34674,"release_id":"ceph-2.1-updates@rhel-7","variant_uid":"MON","arch":"x86_64","service":"pulp","repo_family":"dist","content_format":"rpm","content_category":"binary","name":"rhel-7-server-rhceph-2-mon-rpms__7Server__x86_64","shadow":false,"product_id":286},{"id":34675,"release_id":"ceph-2.1-updates@rhel-7","variant_uid":"MON","arch":"x86_64","service":"pulp","repo_family":"dist","content_format":"rpm","content_category":"source","name":"rhel-7-server-rhceph-2-mon-source-rpms__7Server__x86_64","shadow":false,"product_id":286},{"id":34676,"release_id":"ceph-2.1-updates@rhel-7","variant_uid":"OSD","arch":"x86_64","service":"pulp","repo_family":"dist","content_format":"rpm","content_category":"debug","name":"rhel-7-server-rhceph-2-osd-debug-rpms__7Server__x86_64","shadow":false,"product_id":288},{"id":34677,"release_id":"ceph-2.1-updates@rhel-7","variant_uid":"OSD","arch":"x86_64","service":"pulp","repo_family":"dist","content_format":"rpm","content_category":"binary","name":"rhel-7-server-rhceph-2-osd-rpms__7Server__x86_64","shadow":false,"product_id":288},{"id":34678,"release_id":"ceph-2.1-updates@rhel-7","variant_uid":"OSD","arch":"x86_64","service":"pulp","repo_family":"dist","content_format":"rpm","content_category":"source","name":"rhel-7-server-rhceph-2-osd-source-rpms__7Server__x86_64","shadow":false,"product_id":288},{"id":34679,"release_id":"ceph-2.1-updates@rhel-7","variant_uid":"Server-Tools","arch":"x86_64","service":"pulp","repo_family":"dist","content_format":"rpm","content_category":"debug","name":"rhel-7-server-rhceph-2-tools-debug-rpms__7Server__x86_64","shadow":false,"product_id":69},{"id":34680,"release_id":"ceph-2.1-updates@rhel-7","variant_uid":"Server-Tools","arch":"x86_64","service":"pulp","repo_family":"dist","content_format":"rpm","content_category":"binary","name":"rhel-7-server-rhceph-2-tools-rpms__7Server__x86_64","shadow":false,"product_id":69},{"id":34681,"release_id":"ceph-2.1-updates@rhel-7","variant_uid":"Server-Tools","arch":"x86_64","service":"pulp","repo_family":"dist","content_format":"rpm","content_category":"source","name":"rhel-7-server-rhceph-2-tools-source-rpms__7Server__x86_64","shadow":false,"product_id":69},{"id":34682,"release_id":"ceph-2.1-updates@rhel-7","variant_uid":"Workstation-Tools","arch":"x86_64","service":"pulp","repo_family":"dist","content_format":"rpm","content_category":"debug","name":"rhel-7-workstation-rhceph-2-tools-debug-rpms__7Workstation__x86_64","shadow":false,"product_id":71},{"id":34683,"release_id":"ceph-2.1-updates@rhel-7","variant_uid":"Workstation-Tools","arch":"x86_64","service":"pulp","repo_family":"dist","content_format":"rpm","content_category":"binary","name":"rhel-7-workstation-rhceph-2-tools-rpms__7Workstation__x86_64","shadow":false,"product_id":71},{"id":34684,"release_id":"ceph-2.1-updates@rhel-7","variant_uid":"Workstation-Tools","arch":"x86_64","service":"pulp","repo_family":"dist","content_format":"rpm","content_category":"source","name":"rhel-7-workstation-rhceph-2-tools-source-rpms__7Workstation__x86_64","shadow":false,"product_id":71}]}'
+    http_version: 
+  recorded_at: Thu, 16 Mar 2017 06:40:32 GMT
+- request:
+    method: get
+    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/content%2Ddelivery%2Drepos/34667/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 16 Mar 2017 06:39:34 GMT
+      server:
+      - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.1e-fips mod_auth_kerb/5.4
+        mod_wsgi/3.4 Python/2.7.5
+      expires:
+      - Thu, 16 Mar 2017 06:40:04 GMT
+      vary:
+      - Accept,Cookie
+      last-modified:
+      - Thu, 16 Mar 2017 06:39:34 GMT
+      allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      cache-control:
+      - max-age=30
+      x-frame-options:
+      - SAMEORIGIN
+      transfer-encoding:
+      - chunked
+      content-type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"id":34667,"release_id":"ceph-2.1-updates@rhel-7","variant_uid":"Client-Tools","arch":"x86_64","service":"pulp","repo_family":"dist","content_format":"rpm","content_category":"debug","name":"rhel-7-desktop-rhceph-2-tools-debug-rpms__7Client__x86_64","shadow":false,"product_id":68}'
+    http_version: 
+  recorded_at: Thu, 16 Mar 2017 06:40:32 GMT
+recorded_with: VCR 3.0.3
