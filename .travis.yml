@@ -12,7 +12,7 @@ install:
 - git config --global user.name  "Travis CI"
 - git config --global user.email "pdc@product-definition-center.com"
 - export REPO_URL_GITHUB="https://$GH_TOKEN@github.com/$GH_REPO.git"
-- export GITHUB_ACCESS_TOKEN=$GH_TOKEN
+- export PRONTO_GITHUB_ACCESS_TOKEN=$GH_TOKEN
 script:
 - bundle exec rake test
 - >
