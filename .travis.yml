@@ -17,7 +17,7 @@ script:
 - bundle exec rake test
 - >
   if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-    bundle exec pronto run -f github_pr -c origin/${TRAVIS_BRANCH}
+    bundle exec pronto run -f github -c origin/${TRAVIS_BRANCH}
   fi
 
 after_success:
