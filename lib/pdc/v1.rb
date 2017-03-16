@@ -5,5 +5,6 @@ module PDC
     require 'pdc/v1/release'
     require 'pdc/v1/release_variant'
     require 'pdc/v1/release_rpm_mapping'
+    require 'pdc/v1/content_delivery_repo'
   end
 end
