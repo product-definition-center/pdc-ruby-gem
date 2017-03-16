@@ -8,3 +8,5 @@ Example page
 -------------
 
 Please use markdown to write the documentation file.
+
+Thanks.
