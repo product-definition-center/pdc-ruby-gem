@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'activesupport', '~> 3.2.22.2'
   s.add_dependency 'activemodel', '~> 3.2.22.2'
   s.add_dependency 'uri_template', '~> 0.7.0'
-  s.add_dependency 'multi_json', '~> 1.11.1'
+  s.add_dependency 'multi_json', '~> 1.11'
   s.add_dependency 'faraday', '~> 0.9.2'
   s.add_dependency 'faraday_middleware', '~> 0.10.0'
   s.add_dependency 'faraday-http-cache', '~> 1.3.0'
