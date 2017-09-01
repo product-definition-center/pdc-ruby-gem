@@ -2,7 +2,8 @@ module PDC::V1
   class ReleaseVariant < PDC::Base
     self.primary_key = :id
 
-    attributes :release, :uid, :name, :type, :arches
+    attributes :release, :uid, :name, :type, :arches,
+               :variant_version, :variant_release
 
     def release
       Release.find(attributes[:release])
