@@ -34,5 +34,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'faraday', '~> 0.9.2'
   s.add_dependency 'faraday_middleware', '~> 0.10.0'
   s.add_dependency 'faraday-http-cache', '~> 1.3.0'
+  # redhat sudo yum install ruby-devel libcurl-devel openssl-deve
+  # ubuntu sudo apt-get install libcurl3 libcurl3-gnutls libcurl4-openssl-dev
   s.add_dependency 'curb', '~> 0.9.3'
 end

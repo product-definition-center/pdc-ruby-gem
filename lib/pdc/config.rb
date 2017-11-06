@@ -139,6 +139,7 @@ module PDC
                                     instrumenter: ActiveSupport::Notifications
         end
         c.adapter Faraday.default_adapter
+        c.options.params_encoder = Faraday::FlatParamsEncoder
       end
     end
 
