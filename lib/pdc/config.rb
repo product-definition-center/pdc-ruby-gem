@@ -118,7 +118,10 @@ module PDC
       faraday_config = {
         url:      api_url,
         headers:  PDC::Request.default_headers,
-        ssl:      ssl_config
+        ssl:      ssl_config,
+        request:  {
+          params_encoder: Faraday::FlatParamsEncoder
+        }
       }
 
       PDC::Base.connection = Faraday.new(faraday_config) do |c|
@@ -139,7 +142,6 @@ module PDC
                                     instrumenter: ActiveSupport::Notifications
         end
         c.adapter Faraday.default_adapter
-        c.options.params_encoder = Faraday::FlatParamsEncoder
       end
     end
 
