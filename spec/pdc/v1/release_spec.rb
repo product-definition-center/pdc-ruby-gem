@@ -23,6 +23,11 @@ describe PDC::V1::Release do
       count = release.where(active: false).count
       count.must_equal 0
     end
+
+    it 'can get release by multi product_version' do
+      count = release.where(product_version: ["rhel-8","rhel-7"]).count
+      count.must_equal 8
+    end
   end #  count
 
   describe '#brew' do

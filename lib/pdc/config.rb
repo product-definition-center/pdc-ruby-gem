@@ -118,7 +118,14 @@ module PDC
       faraday_config = {
         url:      api_url,
         headers:  PDC::Request.default_headers,
-        ssl:      ssl_config
+        ssl:      ssl_config,
+        # adding this request parameter is about changing how
+        # parameters are serialized which is mentioned on faraday's
+        # doc, it's about sending a query request with multi values
+        # of a field, like product_version: [xxx, xxx].
+        request:  {
+          params_encoder: Faraday::FlatParamsEncoder
+        }
       }
 
       PDC::Base.connection = Faraday.new(faraday_config) do |c|
