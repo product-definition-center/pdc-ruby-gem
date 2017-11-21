@@ -9,8 +9,10 @@ module PDC
   end
 end
 
-class Minitest::Spec
-  include PDC::Minitest::FixtureExtentions
+module Minitest
+  class Spec
+    include PDC::Minitest::FixtureExtentions
+  end
 end
 
 # fixtures for testing the PDC::Resource::Modules
