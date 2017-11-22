@@ -20,7 +20,6 @@ group :test do
   gem 'minitest-focus'
   gem 'minitest-reporters', '~> 1.1.9'
   gem 'mocha'
-  gem 'rack', '~> 1.4.7'
   gem 'simplecov'
   gem 'timecop'
   gem 'vcr'
