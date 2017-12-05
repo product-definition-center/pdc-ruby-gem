@@ -198,7 +198,7 @@ end
 describe PDC::V1::ReleaseRpmMapping do
   let(:mapping) do
     PDC::V1::ReleaseRpmMapping.where(
-      release_id: 'ceph-2.1-updates@rhel-7',
+      release_id: 'rhceph-2.1@rhel-7',
       package: 'ceph'
     ).first
   end
