@@ -5,7 +5,7 @@ WebMock.disable! # this uses real server
 
 #### service config ####
 def token
-  script_path = File.expand_path(File.dirname(__FILE__))
+  script_path = File.expand_path(__dir__)
   token_path = File.join(script_path, '.token', 'pdc.prod')
   File.read(token_path).chomp.tap { |x| puts "Using token :#{x}" }
 rescue Errno::ENOENT => e

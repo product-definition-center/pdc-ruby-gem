@@ -5,20 +5,15 @@ require 'ap'
 class FakeLogger
   attr_accessor :level
 
-  def debug(*args)
-  end
+  def debug(*args) end
 
-  def info(*args)
-  end
+  def info(*args) end
 
-  def warn(*args)
-  end
+  def warn(*args) end
 
-  def fatal(*args)
-  end
+  def fatal(*args) end
 
-  def error(*args)
-  end
+  def error(*args) end
 end
 
 # PDC.logger = FakeLogger.new
@@ -43,7 +38,7 @@ begin
       logger.error("Line in wrong format: #{line.chomp}")
     end
   end
-rescue => err
+rescue StandardError => err
   logger.fatal('Caught exception; exiting')
   logger.fatal(err)
 end

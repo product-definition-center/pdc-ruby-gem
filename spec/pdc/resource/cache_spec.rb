@@ -71,7 +71,7 @@ describe 'Caching' do
       PDC::V1::Release.page(2).page_size(30).contents!
       PDC::V1::Release.page(2).page_size(30).contents!
     end
-    cache.must_equal [:miss, :fresh]
+    cache.must_equal %i[miss fresh]
   end
 
   it 'caches multiple response' do

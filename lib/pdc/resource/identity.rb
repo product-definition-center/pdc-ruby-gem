@@ -34,7 +34,7 @@ module PDC::Resource
       def default_primary_key
         model_name.foreign_key.to_s
       end
-    end #  ClassMethods
+    end
 
     def id?
       attributes[primary_key].present?
