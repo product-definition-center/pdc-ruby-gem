@@ -20,7 +20,7 @@ module PDC::Resource
       def current_scope
         ScopeRegistry.value_for(:current_scope, name)
       end
-    end # class methods
+    end
 
     def scoped
       self.class.scoped

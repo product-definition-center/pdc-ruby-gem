@@ -62,7 +62,7 @@ module PDC::Resource
         end
         @instance_method_container
       end
-    end # class methods
+    end
 
     def initialize(attributes = {})
       self.attributes = attributes
