@@ -29,7 +29,7 @@ module PDC::Resource
         query = params.except(*resource_path.variables)
         request(:get, uri, query)
       end
-    end # classmethod
+    end
 
     def initialize(attr = {})
       super

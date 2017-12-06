@@ -7,11 +7,11 @@ PDC.configure do |config|
 end
 
 def main
-  rhel7_1 = PDC::V1::Release.find('rhel-7.1')
-  puts "release url : #{rhel7_1.url}"
-  rhel7_1.variants.all.each do |v|
+  rhel71 = PDC::V1::Release.find('rhel-7.1')
+  puts "release url : #{rhel71.url}"
+  rhel71.variants.all.each do |v|
     puts "release variant url : #{v.url}"
   end
 end
 
-main if __FILE__ == $PROGRAM_NAME
+main if $PROGRAM_NAME == __FILE__

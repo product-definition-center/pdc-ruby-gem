@@ -106,7 +106,7 @@ end
 
 describe 'nested hash attributes' do
   it 'returns OpenStruct for nested hash' do
-    allowed_tags = %w(foo bar baz)
+    allowed_tags = %w[foo bar baz]
     stub_get('nested-models/1').to_return_json(
       data: [{
         id: 1, name: 'RHEL',
