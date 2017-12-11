@@ -44,4 +44,48 @@ http_interactions:
       string: '{"compose":"RHEL-7.1-20150219.1","mapping":{"Workstation":{"x86_64":{"tuned-utils":["noarch"],"tuned":["noarch","src"]}},"Workstation-optional":{"x86_64":{"tuned-gtk":["noarch"],"tuned-profiles-compat":["noarch"],"tuned-profiles-atomic":["noarch"],"tuned-utils-systemtap":["noarch"]}},"Server-SAP":{"x86_64":{"tuned-profiles-sap":["noarch"]}},"Server":{"x86_64":{"tuned-utils":["noarch"],"tuned":["noarch","src"]},"s390x":{"tuned-utils":["noarch"],"tuned":["noarch","src"]},"ppc64":{"tuned-utils":["noarch"],"tuned":["noarch","src"]}},"ComputeNode":{"x86_64":{"tuned-utils":["noarch"],"tuned":["noarch","src"]}},"Server-optional":{"x86_64":{"tuned-gtk":["noarch"],"tuned-profiles-compat":["noarch"],"tuned-profiles-atomic":["noarch"],"tuned-utils-systemtap":["noarch"]},"s390x":{"tuned-gtk":["noarch"],"tuned-profiles-compat":["noarch"],"tuned-profiles-atomic":["noarch"],"tuned-utils-systemtap":["noarch"]},"ppc64":{"tuned-gtk":["noarch"],"tuned-profiles-compat":["noarch"],"tuned-profiles-atomic":["noarch"],"tuned-utils-systemtap":["noarch"]}},"Client":{"x86_64":{"tuned-utils":["noarch"],"tuned":["noarch","src"]}},"ComputeNode-optional":{"x86_64":{"tuned-gtk":["noarch"],"tuned-profiles-compat":["noarch"],"tuned-profiles-atomic":["noarch"],"tuned-utils-systemtap":["noarch"]}},"Client-optional":{"x86_64":{"tuned-gtk":["noarch"],"tuned-profiles-compat":["noarch"],"tuned-profiles-atomic":["noarch"],"tuned-utils-systemtap":["noarch"]}}}}'
     http_version: 
   recorded_at: Tue, 10 Jan 2017 06:35:44 GMT
+- request:
+    method: get
+    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/global%2Dcomponent%2Dcontacts/?component=vlgothic-fonts
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Fri, 24 Nov 2017 01:31:31 GMT
+      server:
+      - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.1e-fips mod_auth_kerb/5.4
+        mod_wsgi/3.4 Python/2.7.5
+      expires:
+      - Fri, 24 Nov 2017 01:31:31 GMT
+      vary:
+      - Accept,Cookie
+      last-modified:
+      - Fri, 24 Nov 2017 01:31:31 GMT
+      allow:
+      - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
+      cache-control:
+      - max-age=0
+      x-frame-options:
+      - SAMEORIGIN
+      transfer-encoding:
+      - chunked
+      content-type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"count":3,"next":null,"previous":null,"results":[{"id":1279,"component":"vlgothic-fonts","role":"QE_Group","contact":{"id":5,"mail_name":"I18N","email":"qe-i18n-bugs@redhat.com"}},{"id":1722,"component":"vlgothic-fonts","role":"QE_Leader","contact":{"id":6,"username":"mshao","email":"mshao@redhat.com"}},{"id":2165,"component":"vlgothic-fonts","role":"QE_ACK","contact":{"id":6,"username":"mshao","email":"mshao@redhat.com"}}]}'
+    http_version: 
+  recorded_at: Fri, 24 Nov 2017 01:31:31 GMT
 recorded_with: VCR 3.0.3

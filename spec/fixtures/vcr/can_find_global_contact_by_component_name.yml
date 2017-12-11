@@ -2,52 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/releases/?active=false
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      User-Agent:
-      - Faraday v0.9.2
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      date:
-      - Wed, 27 Jul 2016 06:01:15 GMT
-      server:
-      - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.1e-fips mod_auth_kerb/5.4
-        mod_wsgi/3.4 Python/2.7.5
-      expires:
-      - Wed, 27 Jul 2016 06:01:45 GMT
-      vary:
-      - Accept,Cookie
-      last-modified:
-      - Thu, 21 Jul 2016 12:24:12 GMT
-      allow:
-      - GET, POST, PUT, PATCH, HEAD, OPTIONS
-      cache-control:
-      - max-age=30
-      x-frame-options:
-      - SAMEORIGIN
-      connection:
-      - close
-      transfer-encoding:
-      - chunked
-      content-type:
-      - application/json
-    body:
-      encoding: UTF-8
-      string: '{"count":0,"next":null,"previous":null,"results":[]}'
-    http_version: 
-  recorded_at: Thu, 31 Dec 2015 14:00:00 GMT
-- request:
-    method: get
     uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/global%2Dcomponent%2Dcontacts/?component=vlgothic-fonts
     body:
       encoding: US-ASCII
@@ -65,16 +19,16 @@ http_interactions:
       message: 
     headers:
       date:
-      - Fri, 24 Nov 2017 00:54:28 GMT
+      - Fri, 24 Nov 2017 00:09:42 GMT
       server:
       - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.1e-fips mod_auth_kerb/5.4
         mod_wsgi/3.4 Python/2.7.5
       expires:
-      - Fri, 24 Nov 2017 00:54:30 GMT
+      - Fri, 24 Nov 2017 00:09:45 GMT
       vary:
       - Accept,Cookie
       last-modified:
-      - Fri, 24 Nov 2017 00:54:30 GMT
+      - Fri, 24 Nov 2017 00:09:45 GMT
       allow:
       - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
       cache-control:
@@ -89,5 +43,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"count":3,"next":null,"previous":null,"results":[{"id":1279,"component":"vlgothic-fonts","role":"QE_Group","contact":{"id":5,"mail_name":"I18N","email":"qe-i18n-bugs@redhat.com"}},{"id":1722,"component":"vlgothic-fonts","role":"QE_Leader","contact":{"id":6,"username":"mshao","email":"mshao@redhat.com"}},{"id":2165,"component":"vlgothic-fonts","role":"QE_ACK","contact":{"id":6,"username":"mshao","email":"mshao@redhat.com"}}]}'
     http_version: 
-  recorded_at: Fri, 24 Nov 2017 00:54:30 GMT
+  recorded_at: Fri, 24 Nov 2017 00:09:46 GMT
 recorded_with: VCR 3.0.3

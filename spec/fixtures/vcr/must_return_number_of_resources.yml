@@ -58,4 +58,52 @@ http_interactions:
         Hat Software Collections","base_product":"rhel-6.6-eus","active":true,"product_version":"rhscl-2","release_type":"ga","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null}]}'
     http_version: 
   recorded_at: Thu, 31 Dec 2015 14:00:00 GMT
+- request:
+    method: get
+    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/global%2Dcomponent%2Dcontacts/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Fri, 24 Nov 2017 00:41:54 GMT
+      server:
+      - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.1e-fips mod_auth_kerb/5.4
+        mod_wsgi/3.4 Python/2.7.5
+      expires:
+      - Fri, 24 Nov 2017 00:41:57 GMT
+      vary:
+      - Accept,Cookie
+      last-modified:
+      - Fri, 24 Nov 2017 00:41:57 GMT
+      allow:
+      - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
+      cache-control:
+      - max-age=0
+      x-frame-options:
+      - SAMEORIGIN
+      transfer-encoding:
+      - chunked
+      content-type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"count":12546,"next":"https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/global-component-contacts/?page=2","previous":null,"results":[{"id":1,"component":"389-ds-base","role":"QE_Group","contact":{"id":1,"mail_name":"IdM
+        - Red Hat Directory Server","email":"sramling@redhat.com"}},{"id":2,"component":"mozldap","role":"QE_Group","contact":{"id":1,"mail_name":"IdM
+        - Red Hat Directory Server","email":"sramling@redhat.com"}},{"id":3,"component":"perl-Mozilla-LDAP","role":"QE_Group","contact":{"id":1,"mail_name":"IdM
+        - Red Hat Directory Server","email":"sramling@redhat.com"}},{"id":4,"component":"svrcore","role":"QE_Group","contact":{"id":1,"mail_name":"IdM
+        - Red Hat Directory Server","email":"sramling@redhat.com"}},{"id":5,"component":"389-ds-base","role":"QE_Leader","contact":{"id":2,"username":"jgalipea","email":"jgalipea@redhat.com"}},{"id":6,"component":"antlr-maven-plugin","role":"QE_Leader","contact":{"id":2,"username":"jgalipea","email":"jgalipea@redhat.com"}},{"id":7,"component":"args4j","role":"QE_Leader","contact":{"id":2,"username":"jgalipea","email":"jgalipea@redhat.com"}},{"id":8,"component":"bind-dyndb-ldap","role":"QE_Leader","contact":{"id":2,"username":"jgalipea","email":"jgalipea@redhat.com"}},{"id":9,"component":"ccid","role":"QE_Leader","contact":{"id":2,"username":"jgalipea","email":"jgalipea@redhat.com"}},{"id":10,"component":"cdi-api","role":"QE_Leader","contact":{"id":2,"username":"jgalipea","email":"jgalipea@redhat.com"}},{"id":11,"component":"certmonger","role":"QE_Leader","contact":{"id":2,"username":"jgalipea","email":"jgalipea@redhat.com"}},{"id":12,"component":"classworlds","role":"QE_Leader","contact":{"id":2,"username":"jgalipea","email":"jgalipea@redhat.com"}},{"id":13,"component":"codemodel","role":"QE_Leader","contact":{"id":2,"username":"jgalipea","email":"jgalipea@redhat.com"}},{"id":14,"component":"coolkey","role":"QE_Leader","contact":{"id":2,"username":"jgalipea","email":"jgalipea@redhat.com"}},{"id":15,"component":"ding-libs","role":"QE_Leader","contact":{"id":2,"username":"jgalipea","email":"jgalipea@redhat.com"}},{"id":16,"component":"dnsjava","role":"QE_Leader","contact":{"id":2,"username":"jgalipea","email":"jgalipea@redhat.com"}},{"id":17,"component":"esc","role":"QE_Leader","contact":{"id":2,"username":"jgalipea","email":"jgalipea@redhat.com"}},{"id":18,"component":"ifd-egate","role":"QE_Leader","contact":{"id":2,"username":"jgalipea","email":"jgalipea@redhat.com"}},{"id":19,"component":"ipa","role":"QE_Leader","contact":{"id":2,"username":"jgalipea","email":"jgalipea@redhat.com"}},{"id":20,"component":"ipa-client","role":"QE_Leader","contact":{"id":2,"username":"jgalipea","email":"jgalipea@redhat.com"}}]}'
+    http_version: 
+  recorded_at: Fri, 24 Nov 2017 00:41:57 GMT
 recorded_with: VCR 3.0.3

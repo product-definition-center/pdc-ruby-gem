@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/global%2Dcomponent%2Dcontacts/?component=bash
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Fri, 24 Nov 2017 01:05:13 GMT
+      server:
+      - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.1e-fips mod_auth_kerb/5.4
+        mod_wsgi/3.4 Python/2.7.5
+      expires:
+      - Fri, 24 Nov 2017 01:05:13 GMT
+      vary:
+      - Accept,Cookie
+      last-modified:
+      - Fri, 24 Nov 2017 01:05:13 GMT
+      allow:
+      - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
+      cache-control:
+      - max-age=0
+      x-frame-options:
+      - SAMEORIGIN
+      transfer-encoding:
+      - chunked
+      content-type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"count":6,"next":null,"previous":null,"results":[{"id":2211,"component":"bash-completion","role":"QE_Group","contact":{"id":7,"mail_name":"NONE","email":"nobody@redhat.com"}},{"id":2673,"component":"bash-completion","role":"QE_Leader","contact":{"id":8,"username":"nobody","email":"nobody@redhat.com"}},{"id":3135,"component":"bash-completion","role":"QE_ACK","contact":{"id":8,"username":"nobody","email":"nobody@redhat.com"}},{"id":4689,"component":"bash","role":"QE_Group","contact":{"id":11,"mail_name":"BaseOS
+        QE - Apps","email":"qe-baseos-apps@redhat.com"}},{"id":5782,"component":"bash","role":"QE_Leader","contact":{"id":12,"username":"psplicha","email":"psplicha@redhat.com"}},{"id":6875,"component":"bash","role":"QE_ACK","contact":{"id":12,"username":"psplicha","email":"psplicha@redhat.com"}}]}'
+    http_version: 
+  recorded_at: Fri, 24 Nov 2017 01:05:13 GMT
+recorded_with: VCR 3.0.3
