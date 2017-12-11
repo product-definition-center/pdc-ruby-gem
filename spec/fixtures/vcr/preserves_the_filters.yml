@@ -43,7 +43,7 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"count":3,"next":null,"previous":null,"results":[{"release":"satellite-6.0.4@rhel-5","id":"rhcommon","uid":"rhcommon","name":"rh-common","type":"variant","arches":["i386","ia64","ppc","s390x","x86_64"]},{"release":"satellite-6.0.4@rhel-6","id":"rhcommon","uid":"rhcommon","name":"rh-common","type":"variant","arches":["i386","ppc64","s390x","x86_64"]},{"release":"satellite-6.0.4@rhel-7","id":"rhcommon","uid":"rhcommon","name":"rh-common","type":"variant","arches":["ppc64","s390x","x86_64"]}]}'
+      string: '{"count":3,"next":null,"previous":null,"results":[{"release":"satellite-6.0.4@rhel-5","id":"rhcommon","uid":"rhcommon","name":"rh-common","type":"variant","arches":["i386","ia64","ppc","s390x","x86_64"],"allowed_push_targets":[]},{"release":"satellite-6.0.4@rhel-6","id":"rhcommon","uid":"rhcommon","name":"rh-common","type":"variant","arches":["i386","ppc64","s390x","x86_64"],"allowed_push_targets":[]},{"release":"satellite-6.0.4@rhel-7","id":"rhcommon","uid":"rhcommon","name":"rh-common","type":"variant","arches":["ppc64","s390x","x86_64"],"allowed_push_targets":[]}]}'
     http_version: 
   recorded_at: Thu, 31 Dec 2015 14:00:00 GMT
 recorded_with: VCR 3.0.3

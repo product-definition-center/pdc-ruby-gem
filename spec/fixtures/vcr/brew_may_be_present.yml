@@ -44,7 +44,9 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"release_id":"satellite-6.2-updates@rhel-6","short":"satellite","version":"6.2","name":"Red
-        Hat Satellite","base_product":"rhel-6","active":true,"product_version":"satellite-6","release_type":"updates","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":{"default_target":null,"allowed_tags":["satellite-6.2.0-rhel-6"]},"product_pages":null,"errata":null}'
+        Hat Satellite","base_product":"rhel-6","active":true,"product_version":"satellite-6","release_type":"updates",
+        "compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":{"default_target":null,"allowed_tags":["satellite-6.2.0-rhel-6"]},
+        "product_pages":null,"errata":null,"sigkey":null,"allow_buildroot_push":true,"allowed_debuginfo_services":[],"allowed_push_targets":[]}'
     http_version: 
   recorded_at: Wed, 03 Aug 2016 15:34:56 GMT
 recorded_with: VCR 3.0.3

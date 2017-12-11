@@ -4,7 +4,9 @@ module PDC
       attributes :short, :version, :name, :base_product,
                  :active, :product_version, :release_type,
                  :compose_set, :integrated_with, :bugzilla,
-                 :dist_git, :brew, :product_pages, :errata
+                 :dist_git, :brew, :product_pages, :errata,
+                 :sigkey, :allow_buildroot_push,
+                 :allowed_debuginfo_services, :allowed_push_targets
 
       def variants
         @variants ||= ReleaseVariant.where(release: id)

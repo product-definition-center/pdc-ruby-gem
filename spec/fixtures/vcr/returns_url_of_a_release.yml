@@ -42,7 +42,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"release_id":"rhel-7.1","short":"rhel","version":"7.1","name":"Red
-        Hat Enterprise Linux","base_product":null,"active":true,"product_version":"rhel-7","release_type":"ga","compose_set":["RHEL-7.1-20140507.2","RHEL-7.1-20140708.n.0","RHEL-7.1-20150219.1"],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null}'
+        Hat Enterprise Linux","base_product":null,"active":true,"product_version":"rhel-7","release_type":"ga","compose_set":["RHEL-7.1-20140507.2","RHEL-7.1-20140708.n.0","RHEL-7.1-20150219.1"],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null,"sigkey":null,"allow_buildroot_push":true,"allowed_debuginfo_services":[],"allowed_push_targets":[]}'
     http_version: 
   recorded_at: Mon, 12 Sep 2016 07:48:06 GMT
 recorded_with: VCR 3.0.3

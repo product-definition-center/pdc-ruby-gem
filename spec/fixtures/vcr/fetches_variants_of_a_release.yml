@@ -44,7 +44,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"release_id":"rhel-7.1","short":"rhel","version":"7.1","name":"Red
-        Hat Enterprise Linux","base_product":null,"active":true,"product_version":"rhel-7","release_type":"ga","compose_set":["RHEL-7.1-20140507.2","RHEL-7.1-20140708.n.0","RHEL-7.1-20150219.1"],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null}'
+        Hat Enterprise Linux","base_product":null,"active":true,"product_version":"rhel-7","release_type":"ga","compose_set":["RHEL-7.1-20140507.2","RHEL-7.1-20140708.n.0","RHEL-7.1-20150219.1"],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null,"sigkey":null,"allow_buildroot_push":true,"allowed_debuginfo_services":[],"allowed_push_targets":[]}'
     http_version: 
   recorded_at: Wed, 03 Aug 2016 15:04:27 GMT
 - request:
@@ -90,10 +90,10 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"count":12,"next":null,"previous":null,"results":[{"release":"rhel-7.1","id":"Client","uid":"Client","name":"Client","type":"variant","arches":["x86_64"]},{"release":"rhel-7.1","id":"optional","uid":"Client-optional","name":"optional","type":"optional","arches":["x86_64"]},{"release":"rhel-7.1","id":"ComputeNode","uid":"ComputeNode","name":"Compute
-        Node","type":"variant","arches":["x86_64"]},{"release":"rhel-7.1","id":"optional","uid":"ComputeNode-optional","name":"optional","type":"optional","arches":["x86_64"]},{"release":"rhel-7.1","id":"Server","uid":"Server","name":"Server","type":"variant","arches":["ppc64","s390x","x86_64"]},{"release":"rhel-7.1","id":"HighAvailability","uid":"Server-HighAvailability","name":"High
-        Availability","type":"addon","arches":["x86_64"]},{"release":"rhel-7.1","id":"optional","uid":"Server-optional","name":"optional","type":"optional","arches":["ppc64","s390x","x86_64"]},{"release":"rhel-7.1","id":"ResilientStorage","uid":"Server-ResilientStorage","name":"Resilient
-        Storage","type":"addon","arches":["x86_64"]},{"release":"rhel-7.1","id":"RT","uid":"Server-RT","name":"RT","type":"layered-product","arches":["x86_64"]},{"release":"rhel-7.1","id":"SAP","uid":"Server-SAP","name":"SAP","type":"layered-product","arches":["x86_64"]},{"release":"rhel-7.1","id":"Workstation","uid":"Workstation","name":"Workstation","type":"variant","arches":["x86_64"]},{"release":"rhel-7.1","id":"optional","uid":"Workstation-optional","name":"optional","type":"optional","arches":["x86_64"]}]}'
+      string: '{"count":12,"next":null,"previous":null,"results":[{"release":"rhel-7.1","id":"Client","uid":"Client","name":"Client","type":"variant","arches":["x86_64"],"allowed_push_targets":[]},{"release":"rhel-7.1","id":"optional","uid":"Client-optional","name":"optional","type":"optional","arches":["x86_64"],"allowed_push_targets":[]},{"release":"rhel-7.1","id":"ComputeNode","uid":"ComputeNode","name":"Compute
+        Node","type":"variant","arches":["x86_64"],"allowed_push_targets":[]},{"release":"rhel-7.1","id":"optional","uid":"ComputeNode-optional","name":"optional","type":"optional","arches":["x86_64"],"allowed_push_targets":[]},{"release":"rhel-7.1","id":"Server","uid":"Server","name":"Server","type":"variant","arches":["ppc64","s390x","x86_64"],"allowed_push_targets":[]},{"release":"rhel-7.1","id":"HighAvailability","uid":"Server-HighAvailability","name":"High
+        Availability","type":"addon","arches":["x86_64"],"allowed_push_targets":[]},{"release":"rhel-7.1","id":"optional","uid":"Server-optional","name":"optional","type":"optional","arches":["ppc64","s390x","x86_64"],"allowed_push_targets":[]},{"release":"rhel-7.1","id":"ResilientStorage","uid":"Server-ResilientStorage","name":"Resilient
+        Storage","type":"addon","arches":["x86_64"],"allowed_push_targets":[]},{"release":"rhel-7.1","id":"RT","uid":"Server-RT","name":"RT","type":"layered-product","arches":["x86_64"],"allowed_push_targets":[]},{"release":"rhel-7.1","id":"SAP","uid":"Server-SAP","name":"SAP","type":"layered-product","arches":["x86_64"],"allowed_push_targets":[]},{"release":"rhel-7.1","id":"Workstation","uid":"Workstation","name":"Workstation","type":"variant","arches":["x86_64"],"allowed_push_targets":[]},{"release":"rhel-7.1","id":"optional","uid":"Workstation-optional","name":"optional","type":"optional","arches":["x86_64"]}]}'
     http_version: 
   recorded_at: Wed, 03 Aug 2016 15:04:29 GMT
 - request:
@@ -140,7 +140,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"release_id":"rhel-7.1","short":"rhel","version":"7.1","name":"Red
-        Hat Enterprise Linux","base_product":null,"active":true,"product_version":"rhel-7","release_type":"ga","compose_set":["RHEL-7.1-20140507.2","RHEL-7.1-20140708.n.0","RHEL-7.1-20150219.1"],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null}'
+        Hat Enterprise Linux","base_product":null,"active":true,"product_version":"rhel-7","release_type":"ga","compose_set":["RHEL-7.1-20140507.2","RHEL-7.1-20140708.n.0","RHEL-7.1-20150219.1"],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null,"sigkey":null,"allow_buildroot_push":true,"allowed_debuginfo_services":[],"allowed_push_targets":[]}'
     http_version: 
   recorded_at: Wed, 03 Aug 2016 15:04:30 GMT
 - request:

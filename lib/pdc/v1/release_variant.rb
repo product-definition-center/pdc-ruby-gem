@@ -3,7 +3,8 @@ module PDC::V1
     self.primary_key = :id
 
     attributes :release, :uid, :name, :type, :arches,
-               :variant_version, :variant_release
+               :variant_version, :variant_release,
+               :allowed_push_targets
 
     def release
       Release.find(attributes[:release])
