@@ -7,5 +7,6 @@ module PDC
     require 'pdc/v1/release_rpm_mapping'
     require 'pdc/v1/content_delivery_repo'
     require 'pdc/v1/global_component_contact'
+    require 'pdc/v1/released_file'
   end
 end
