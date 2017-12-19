@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/releases/rhel-7.1/
+    uri: https://example.com/rest_api/v1/releases/rhel-7.1/
     body:
       encoding: US-ASCII
       string: ''
@@ -49,7 +49,7 @@ http_interactions:
   recorded_at: Wed, 03 Aug 2016 15:04:27 GMT
 - request:
     method: get
-    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/release%2Dvariants/?release=rhel-7.1
+    uri: https://example.com/rest_api/v1/release%2Dvariants/?release=rhel-7.1
     body:
       encoding: US-ASCII
       string: ''
@@ -98,7 +98,7 @@ http_interactions:
   recorded_at: Wed, 03 Aug 2016 15:04:29 GMT
 - request:
     method: get
-    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/releases/rhel-7.1/
+    uri: https://example.com/rest_api/v1/releases/rhel-7.1/
     body:
       encoding: US-ASCII
       string: ''
@@ -145,7 +145,7 @@ http_interactions:
   recorded_at: Wed, 03 Aug 2016 15:04:30 GMT
 - request:
     method: get
-    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/releases/rhel-7.1/
+    uri: https://example.com/rest_api/v1/releases/rhel-7.1/
     body:
       encoding: US-ASCII
       string: ''
@@ -192,7 +192,7 @@ http_interactions:
   recorded_at: Wed, 03 Aug 2016 15:04:41 GMT
 - request:
     method: get
-    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/releases/rhel-7.1/
+    uri: https://example.com/rest_api/v1/releases/rhel-7.1/
     body:
       encoding: US-ASCII
       string: ''
@@ -239,7 +239,7 @@ http_interactions:
   recorded_at: Wed, 03 Aug 2016 15:04:52 GMT
 - request:
     method: get
-    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/releases/rhel-7.1/
+    uri: https://example.com/rest_api/v1/releases/rhel-7.1/
     body:
       encoding: US-ASCII
       string: ''
@@ -286,7 +286,7 @@ http_interactions:
   recorded_at: Wed, 03 Aug 2016 15:05:04 GMT
 - request:
     method: get
-    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/releases/rhel-7.1/
+    uri: https://example.com/rest_api/v1/releases/rhel-7.1/
     body:
       encoding: US-ASCII
       string: ''
@@ -333,7 +333,7 @@ http_interactions:
   recorded_at: Wed, 03 Aug 2016 15:06:49 GMT
 - request:
     method: get
-    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/releases/rhel-7.1/
+    uri: https://example.com/rest_api/v1/releases/rhel-7.1/
     body:
       encoding: US-ASCII
       string: ''
@@ -380,7 +380,7 @@ http_interactions:
   recorded_at: Wed, 03 Aug 2016 15:07:03 GMT
 - request:
     method: get
-    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/releases/rhel-7.1/
+    uri: https://example.com/rest_api/v1/releases/rhel-7.1/
     body:
       encoding: US-ASCII
       string: ''
@@ -427,7 +427,7 @@ http_interactions:
   recorded_at: Wed, 03 Aug 2016 15:07:14 GMT
 - request:
     method: get
-    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/releases/rhel-7.1/
+    uri: https://example.com/rest_api/v1/releases/rhel-7.1/
     body:
       encoding: US-ASCII
       string: ''
@@ -474,7 +474,7 @@ http_interactions:
   recorded_at: Wed, 03 Aug 2016 15:07:25 GMT
 - request:
     method: get
-    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/releases/rhel-7.1/
+    uri: https://example.com/rest_api/v1/releases/rhel-7.1/
     body:
       encoding: US-ASCII
       string: ''
@@ -521,7 +521,7 @@ http_interactions:
   recorded_at: Wed, 03 Aug 2016 15:07:37 GMT
 - request:
     method: get
-    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/releases/rhel-7.1/
+    uri: https://example.com/rest_api/v1/releases/rhel-7.1/
     body:
       encoding: US-ASCII
       string: ''
@@ -568,7 +568,7 @@ http_interactions:
   recorded_at: Wed, 03 Aug 2016 15:07:50 GMT
 - request:
     method: get
-    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/releases/rhel-7.1/
+    uri: https://example.com/rest_api/v1/releases/rhel-7.1/
     body:
       encoding: US-ASCII
       string: ''
@@ -615,7 +615,7 @@ http_interactions:
   recorded_at: Wed, 03 Aug 2016 15:08:01 GMT
 - request:
     method: get
-    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/releases/rhel-7.1/
+    uri: https://example.com/rest_api/v1/releases/rhel-7.1/
     body:
       encoding: US-ASCII
       string: ''

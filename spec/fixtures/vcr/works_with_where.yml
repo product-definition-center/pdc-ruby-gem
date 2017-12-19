@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/releases/?active=false
+    uri: https://example.com/rest_api/v1/releases/?active=false
     body:
       encoding: US-ASCII
       string: ''
@@ -48,7 +48,7 @@ http_interactions:
   recorded_at: Thu, 31 Dec 2015 14:00:00 GMT
 - request:
     method: get
-    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/global%2Dcomponent%2Dcontacts/?component=vlgothic-fonts
+    uri: https://example.com/rest_api/v1/global%2Dcomponent%2Dcontacts/?component=vlgothic-fonts
     body:
       encoding: US-ASCII
       string: ''

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/releases/satellite-6.2-updates%40rhel-6/
+    uri: https://example.com/rest_api/v1/releases/satellite-6.2-updates%40rhel-6/
     body:
       encoding: US-ASCII
       string: ''

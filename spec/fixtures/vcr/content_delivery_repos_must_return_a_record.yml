@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/content%2Ddelivery%2Drepos/?release_id=ceph-2.1-updates%40rhel-7&service=pulp
+    uri: https://example.com/rest_api/v1/content%2Ddelivery%2Drepos/?release_id=ceph-2.1-updates%40rhel-7&service=pulp
     body:
       encoding: US-ASCII
       string: ''
@@ -46,7 +46,7 @@ http_interactions:
   recorded_at: Thu, 16 Mar 2017 06:40:32 GMT
 - request:
     method: get
-    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/content%2Ddelivery%2Drepos/34667/
+    uri: https://example.com/rest_api/v1/content%2Ddelivery%2Drepos/34667/
     body:
       encoding: US-ASCII
       string: ''

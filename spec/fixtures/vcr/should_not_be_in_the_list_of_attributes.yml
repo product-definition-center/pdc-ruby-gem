@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/arches/?page=2
+    uri: https://example.com/rest_api/v1/arches/?page=2
     body:
       encoding: US-ASCII
       string: ''
@@ -43,12 +43,12 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"count":50,"next":"https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/arches/?page=3","previous":"https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/arches/","results":[{"name":"i386"},{"name":"i486"},{"name":"i586"},{"name":"i686"},{"name":"ia32e"},{"name":"ia64"},{"name":"noarch"},{"name":"nosrc"},{"name":"ppc"},{"name":"ppc64"},{"name":"ppc64iseries"},{"name":"ppc64le"},{"name":"ppc64p7"},{"name":"ppc64pseries"},{"name":"s390"},{"name":"s390x"},{"name":"sh3"},{"name":"sh4"},{"name":"sh4a"},{"name":"sparc"}]}'
+      string: '{"count":50,"next":"https://example.com/rest_api/v1/arches/?page=3","previous":"https://example.com/rest_api/v1/arches/","results":[{"name":"i386"},{"name":"i486"},{"name":"i586"},{"name":"i686"},{"name":"ia32e"},{"name":"ia64"},{"name":"noarch"},{"name":"nosrc"},{"name":"ppc"},{"name":"ppc64"},{"name":"ppc64iseries"},{"name":"ppc64le"},{"name":"ppc64p7"},{"name":"ppc64pseries"},{"name":"s390"},{"name":"s390x"},{"name":"sh3"},{"name":"sh4"},{"name":"sh4a"},{"name":"sparc"}]}'
     http_version: 
   recorded_at: Thu, 31 Dec 2015 14:00:00 GMT
 - request:
     method: get
-    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/arches/?page=3
+    uri: https://example.com/rest_api/v1/arches/?page=3
     body:
       encoding: US-ASCII
       string: ''
@@ -89,7 +89,7 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"count":50,"next":null,"previous":"https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/arches/?page=2","results":[{"name":"sparc64"},{"name":"sparc64v"},{"name":"sparcv8"},{"name":"sparcv9"},{"name":"sparcv9v"},{"name":"src"},{"name":"x86_64"},{"name":"aarch64"},{"name":"asdfwfsf"},{"name":"asdfdswe"}]}'
+      string: '{"count":50,"next":null,"previous":"https://example.com/rest_api/v1/arches/?page=2","results":[{"name":"sparc64"},{"name":"sparc64v"},{"name":"sparcv8"},{"name":"sparcv9"},{"name":"sparcv9v"},{"name":"src"},{"name":"x86_64"},{"name":"aarch64"},{"name":"asdfwfsf"},{"name":"asdfdswe"}]}'
     http_version: 
   recorded_at: Thu, 31 Dec 2015 14:00:00 GMT
 recorded_with: VCR 3.0.3

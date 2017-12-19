@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/releases/?page=2&page_size=30
+    uri: https://example.com/rest_api/v1/releases/?page=2&page_size=30
     body:
       encoding: US-ASCII
       string: ''
@@ -43,7 +43,7 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"count":54,"next":null,"previous":"https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/releases/?page_size=30","results":[{"release_id":"satellite-6.2@rhel-7","short":"satellite","version":"6.2","name":"Red
+      string: '{"count":54,"next":null,"previous":"https://example.com/rest_api/v1/releases/?page_size=30","results":[{"release_id":"satellite-6.2@rhel-7","short":"satellite","version":"6.2","name":"Red
         Hat Satellite","base_product":"rhel-7","active":true,"product_version":"satellite-6","release_type":"ga","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":null,"product_pages":null,"errata":null},{"release_id":"satellite-6.2-updates@rhel-6","short":"satellite","version":"6.2","name":"Red
         Hat Satellite","base_product":"rhel-6","active":true,"product_version":"satellite-6","release_type":"updates","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":{"default_target":null,"allowed_tags":["satellite-6.2.0-rhel-6"]},"product_pages":null,"errata":null},{"release_id":"satellite-6.2-updates@rhel-7","short":"satellite","version":"6.2","name":"Red
         Hat Satellite","base_product":"rhel-7","active":true,"product_version":"satellite-6","release_type":"updates","compose_set":[],"integrated_with":null,"bugzilla":null,"dist_git":null,"brew":{"default_target":null,"allowed_tags":["satellite-6.2.0-rhel-7"]},"product_pages":null,"errata":null},{"release_id":"sattools-6.2@rhel-6.2-aus","short":"sattools","version":"6.2","name":"Red

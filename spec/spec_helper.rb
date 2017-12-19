@@ -28,7 +28,7 @@ Minitest::Reporters.use! [
 # require all support files
 Dir[File.expand_path('../support/**/*.rb', __FILE__)].each { |f| require f }
 
-PDC_SITE = 'https://pdc.host.dev.eng.pek2.redhat.com/'.freeze
+PDC_SITE = 'https://example.com/'.freeze
 
 PDC.configure do |config|
   config.site = PDC_SITE

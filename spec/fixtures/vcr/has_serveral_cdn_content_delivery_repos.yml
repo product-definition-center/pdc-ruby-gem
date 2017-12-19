@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://pdc.host.dev.eng.pek2.redhat.com/rest_api/v1/content%2Ddelivery%2Drepos/?release_id=ceph-2.1-updates%40rhel-7&service=pulp
+    uri: https://example.com/rest_api/v1/content%2Ddelivery%2Drepos/?release_id=ceph-2.1-updates%40rhel-7&service=pulp
     body:
       encoding: US-ASCII
       string: ''
