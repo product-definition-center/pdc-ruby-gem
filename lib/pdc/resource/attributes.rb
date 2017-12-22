@@ -93,6 +93,10 @@ module PDC::Resource
       if attribute?(name) then attribute(name)
       elsif predicate?(name)   then predicate(name)
       elsif setter?(name)      then set_attribute(name, args.first)
+      elsif self.associations.key?(name) then
+        association = self.associations[name]
+        association_obj = association.build(association.parent_class)
+        association_obj.klass.find(self.foreign_key)
       else super
       end
     end
