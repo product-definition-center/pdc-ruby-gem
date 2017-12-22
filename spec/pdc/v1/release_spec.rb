@@ -53,7 +53,7 @@ describe PDC::V1::Release do
       variants = rhel71.variants.all
       variants.length.must_equal 12
       releases = variants.map(&:release)
-      releases.must_equal [rhel71] * variants.length
+      releases.must_equal ['rhel-7.1'] * variants.length
     end
   end
 

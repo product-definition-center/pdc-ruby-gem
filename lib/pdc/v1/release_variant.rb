@@ -6,10 +6,6 @@ module PDC::V1
                :variant_version, :variant_release,
                :allowed_push_targets
 
-    def release
-      Release.find(attributes[:release])
-    end
-
     ### NOTE
     # ReleaseVariant is different from other resources in the way
     # its url is created so it requires special handling
@@ -27,7 +23,6 @@ module PDC::V1
 
     # attribute_rename :release, :release_id
 
-    # belongs_to :release, class_name: 'PDC::V1::Release',
-    # uri: "#{api_path}/releases/:release_id"
+    belongs_to :release, class_name: 'PDC::V1::Release', uri: 'rest_api/v1/releases/:release_id'
   end
 end
