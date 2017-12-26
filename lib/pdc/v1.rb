@@ -8,5 +8,6 @@ module PDC
     require 'pdc/v1/content_delivery_repo'
     require 'pdc/v1/global_component_contact'
     require 'pdc/v1/released_file'
+    require 'pdc/v1/multi_destination'
   end
 end
