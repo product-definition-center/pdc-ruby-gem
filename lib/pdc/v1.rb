@@ -9,5 +9,6 @@ module PDC
     require 'pdc/v1/global_component_contact'
     require 'pdc/v1/released_file'
     require 'pdc/v1/multi_destination'
+    require 'pdc/v1/variant_cpe'
   end
 end

@@ -16,6 +16,9 @@ def main
 
   destinations = PDC::V1::MultiDestination.all!.to_a
   ap destinations
+
+  cpes = PDC::V1::VariantCpe.all!.to_a
+  ap cpes
 end
 
 main if $PROGRAM_NAME == __FILE__

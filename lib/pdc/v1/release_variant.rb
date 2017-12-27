@@ -21,6 +21,10 @@ module PDC::V1
       @url = connection.build_url(instance_path).to_s
     end
 
+    def cpe
+      VariantCpe.where(variant_uid: attributes[:uid]).first
+    end
+
     # attribute_rename :release, :release_id
 
     # belongs_to :release, class_name: 'PDC::V1::Release',
