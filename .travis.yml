@@ -21,8 +21,8 @@ script:
 after_success:
 - >
   [ "$TRAVIS_BRANCH" = "master" ] &&
-  [ "$TRAVIS_PULL_REQUEST" = "false" ] &&
-    make deploy_doc
+  [ "$TRAVIS_PULL_REQUEST" = "false" ]
+  make -C docs/ setup_gh_pages gen_deploy
 env:
   global:
     PRONTO_PULL_REQUEST_ID=${TRAVIS_PULL_REQUEST}

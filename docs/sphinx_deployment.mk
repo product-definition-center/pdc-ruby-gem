@@ -62,7 +62,7 @@ endif
 #if REPO_URL_GITHUB was NOT defined by travis-ci
 ifndef REPO_URL_GITHUB
 # Configure your right github project repo
-# REPO_URL_GITHUB       = https://github.com/product-definition-center/pdc-client
+REPO_URL_GITHUB       = https://github.com/product-definition-center/pdc-ruby-gem.git
 endif
 
 ## end deployment configuration, don't edit anything below this line ##
