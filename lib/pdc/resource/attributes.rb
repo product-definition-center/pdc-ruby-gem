@@ -110,7 +110,7 @@ module PDC::Resource
     end
 
     def predicate?(name)
-      name.to_s.end_with?('?')
+      name.to_s.end_with?('?') && attributes.key?(name[0..-2])
     end
 
     def predicate(name)

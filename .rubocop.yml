@@ -11,10 +11,22 @@ Style/ClassAndModuleChildren:
 
 Metrics/LineLength:
   Max: 100
+  Exclude:
+    - spec/**/*.rb
+    - examples/**/*.rb
 
 Metrics/MethodLength:
   Max: 25
 
 Metrics/AbcSize:
   Max: 25
+
+Metrics/BlockLength:
+  Max: 100
+  Exclude:
+    - spec/pdc/**/*.rb
+    - examples/**/*.rb
+
+Naming/PredicateName:
+  Enabled: false
 

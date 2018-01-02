@@ -40,7 +40,6 @@ describe PDC::Resource::Attributes do
     stub_get('products/1').to_return_json(data: [{ id: 1, name: 'RHEL' }])
     product = Product.find(1)
     assert_equal true, product.name?
-    assert_equal false, product.description?
   end
 
   it 'can assign a hash' do
@@ -76,6 +75,18 @@ describe PDC::Resource::Attributes do
 
     product.foobar = 'bar'
     product.foobar.must_equal 'bar'
+  end
+
+  it 'return error when no such method' do
+    stub_get('products/1').to_return_json(data: [{ id: 1, name: 'RHEL' }])
+
+    product = Product.find(1)
+    assert_raises NoMethodError do
+      product.no_such_thing?
+    end
+    assert_raises NoMethodError do
+      product.no_such_thing
+    end
   end
 
   describe '#respond_to' do
