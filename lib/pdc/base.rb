@@ -7,6 +7,7 @@ module PDC
     include PDC::Resource::Attributes
     include PDC::Resource::Scopes
     include PDC::Resource::RestApi
+    include PDC::Resource::Associations
 
     scope :page, ->(value) { where(page: value) }
     scope :page_size, ->(value) { where(page_size: value) }
