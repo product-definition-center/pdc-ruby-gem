@@ -70,6 +70,10 @@ module PDC::Resource
       with_scope { klass.send(name, *args, &block) }
     end
 
+    def respond_to_missing?(name)
+      klass.respond_to? name
+    end
+
     # Keep hold of current scope while running a method on the class
     def with_scope
       previous = klass.current_scope

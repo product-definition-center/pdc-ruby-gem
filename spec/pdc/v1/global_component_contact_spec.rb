@@ -18,7 +18,7 @@ describe PDC::V1::GlobalComponentContact do
   describe 'count' do
     it 'must return number of resources' do
       count = contact.count
-      count.must_equal 12546
+      count.must_equal 12_546
     end
 
     it 'works with where' do

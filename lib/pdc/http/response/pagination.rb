@@ -13,10 +13,8 @@ module PDC::Response
 
       metadata[PDC::Resource::PAGINATION] = {
         resource_count:   metadata.delete(:count),
-
         # TODO: decide if this is okay to discard the
         # schema://host:port/ of the next and previous
-
         next_page:        request_uri(metadata.delete(:next)),
         previous_page:    request_uri(metadata.delete(:previous))
       }

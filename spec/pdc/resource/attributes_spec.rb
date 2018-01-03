@@ -20,15 +20,15 @@ end
 
 describe PDC::Resource::Attributes do
   it 'returns all attributes' do
-    Product.attributes.wont_be_empty
+    Fixtures::Product.attributes.wont_be_empty
   end
 
   it 'primary_key will be in attributes by default' do
-    Product.attributes.must_include Product.primary_key
+    Fixtures::Product.attributes.must_include Fixtures::Product.primary_key
   end
 
   it 'allows block initialization' do
-    prod = Product.new do |p|
+    prod = Fixtures::Product.new do |p|
       p.name = 'RHEL'
       p.description = 'Enterprise Linux'
     end
@@ -38,12 +38,12 @@ describe PDC::Resource::Attributes do
 
   it 'can handle predicate' do
     stub_get('products/1').to_return_json(data: [{ id: 1, name: 'RHEL' }])
-    product = Product.find(1)
+    product = Fixtures::Product.find(1)
     assert_equal true, product.name?
   end
 
   it 'can assign a hash' do
-    product = Product.new(id: 2)
+    product = Fixtures::Product.new(id: 2)
     product.attributes = { name: 'RHEL' }
 
     product.name.must_equal 'RHEL'
@@ -51,24 +51,24 @@ describe PDC::Resource::Attributes do
   end
 
   it 'can get and set value' do
-    product = Product.new
+    product = Fixtures::Product.new
     product.name = 'RHEL'
     product.name.must_equal 'RHEL'
   end
 
   it 'works with []' do
-    product = Product.new(name: 'Fedora')
+    product = Fixtures::Product.new(name: 'Fedora')
     product[:name].must_equal 'Fedora'
   end
 
   it 'works with []=' do
-    product = Product.new
+    product = Fixtures::Product.new
     product[:name] = 'bar'
     product.name.must_equal 'bar'
   end
 
   it 'allows assigning unknown attributes' do
-    product = Product.new
+    product = Fixtures::Product.new
 
     product.wont_respond_to :foobar
     product.must_respond_to :foobar=
@@ -80,7 +80,7 @@ describe PDC::Resource::Attributes do
   it 'return error when no such method' do
     stub_get('products/1').to_return_json(data: [{ id: 1, name: 'RHEL' }])
 
-    product = Product.find(1)
+    product = Fixtures::Product.find(1)
     assert_raises NoMethodError do
       product.no_such_thing?
     end
@@ -93,24 +93,24 @@ describe PDC::Resource::Attributes do
     it 'returns true for known attributes' do
       stub_get('products/1').to_return_json(data: [{ id: 1, name: 'RHEL' }])
 
-      product = Product.find(1)
+      product = Fixtures::Product.find(1)
       product.must_respond_to :name
     end
 
     it 'returns false for unknown attributes that are not set' do
       stub_get('products/1').to_return_json(data: [{ id: 1, name: 'RHEL' }])
 
-      product = Product.find(1)
+      product = Fixtures::Product.find(1)
       product.wont_respond_to :title
     end
 
     it 'returns true for unknown attributes after it is set' do
-      product = Product.new
+      product = Fixtures::Product.new
       product.wont_respond_to :foobar
 
       product.foobar = 'bar'
       product.must_respond_to :foobar
-      Product.attributes.wont_include :foobar
+      Fixtures::Product.attributes.wont_include :foobar
     end
   end
 end
@@ -128,7 +128,7 @@ describe 'nested hash attributes' do
       }]
     )
 
-    model = NestedModel.find(1)
+    model = Fixtures::NestedModel.find(1)
     model.must_respond_to :nested
     model.nested.must_be_instance_of OpenStruct
     model.nested.must_respond_to :tag
@@ -149,7 +149,7 @@ describe 'nested hash attributes' do
       }]
     )
 
-    model = NestedModel.find(1)
+    model = Fixtures::NestedModel.find(1)
     model.must_respond_to :nested
 
     model.nested.must_respond_to :second_level
@@ -168,7 +168,7 @@ describe 'nested hash attributes' do
       }]
     )
 
-    model = NestedModel.find(1)
+    model = Fixtures::NestedModel.find(1)
     model.must_respond_to :unregistered_nested
     model.unregistered_nested.must_be_instance_of OpenStruct
     model.unregistered_nested.must_respond_to :value
@@ -177,7 +177,7 @@ describe 'nested hash attributes' do
 end
 
 describe 'Custom ValueParser' do
-  subject { CustomParserModel }
+  subject { Fixtures::CustomParserModel }
   it 'must return fixnum for age' do
     stub_get('custom-parser-models/1').to_return_json(
       data: [{
@@ -187,7 +187,6 @@ describe 'Custom ValueParser' do
 
     model = subject.find(1)
     model.must_respond_to :age
-    model.age.must_be_instance_of Fixnum
     model.age.must_equal 20
   end
 end

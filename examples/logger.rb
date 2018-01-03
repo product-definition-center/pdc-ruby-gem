@@ -34,9 +34,7 @@ path = 'a_non_existent_file'
 
 begin
   File.foreach(path) do |line|
-    unless line =~ /^(\w+) = (.*)$/
-      logger.error("Line in wrong format: #{line.chomp}")
-    end
+    logger.error("Line in wrong format: #{line.chomp}") unless line =~ /^(\w+) = (.*)$/
   end
 rescue StandardError => err
   logger.fatal('Caught exception; exiting')

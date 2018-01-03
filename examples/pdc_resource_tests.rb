@@ -23,7 +23,7 @@ server = {
 
   prod: {
     site: 'https://pdc.engineering.redhat.com',
-    token: ->() { token } # read token only if needed
+    token: -> { token } # read token only if needed
   }
 }
 

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-class SearchableModel < Base
+class SearchableModel < Fixtures::Base
   attributes :name, :product
 
   ### NOTE: where() will have no impact since the data is hardcoded

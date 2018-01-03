@@ -1,8 +1,8 @@
 require 'spec_helper'
 require 'ap'
 
-describe ModelWithIdentity do
-  subject { ModelWithIdentity }
+describe Fixtures::ModelWithIdentity do
+  subject { Fixtures::ModelWithIdentity }
 
   describe '##primary_key' do
     it 'must exist' do
@@ -43,8 +43,8 @@ describe ModelWithIdentity do
   end
 end
 
-describe CustomPrimaryKeyModel do
-  subject { CustomPrimaryKeyModel }
+describe Fixtures::CustomPrimaryKeyModel do
+  subject { Fixtures::CustomPrimaryKeyModel }
 
   describe '##primary_key' do
     it 'can be set' do
@@ -66,8 +66,8 @@ describe CustomPrimaryKeyModel do
   end
 end
 
-describe V1::Foobar do
-  subject { V1::Foobar }
+describe Fixtures::V1::Foobar do
+  subject { Fixtures::V1::Foobar }
   it 'must have a pkey' do
     subject.primary_key.must_equal 'foobar_id'
   end
@@ -79,15 +79,15 @@ end
 
 describe 'attributes' do
   it 'base must have primary key' do
-    ModelBase.new.id.must_be_nil
-    base = ModelBase.new(model_base_id: 1)
+    Fixtures::ModelBase.new.id.must_be_nil
+    base = Fixtures::ModelBase.new(model_base_id: 1)
     base.id.must_equal 1
     base.attributes.must_include :model_base_id
   end
 
   it 'sub must not have primary key of base' do
-    Model.new.id.must_be_nil
-    model = Model.new(model_id: 3)
+    Fixtures::Model.new.id.must_be_nil
+    model = Fixtures::Model.new(model_id: 3)
     model.id.must_equal 3
     model.attributes.must_include :model_id
     model.attributes.wont_include :model_base_id

@@ -1,7 +1,6 @@
 require 'faraday-http-cache'
 require 'pdc/http/request/token_fetcher'
 
-# rubocop:disable ModuleLength
 module PDC
   # This class is the main access point for all PDC::Resource instances.
   #
@@ -23,17 +22,13 @@ module PDC
     Config = Struct.new(
       :site,
       :api_root,
-
       :ssl_verify_mode,
-
       :requires_token,
       :token_obtain_path,
       :token,
-
       :log_level,
       :enable_logging,
       :logger,
-
       :cache_store,
       :disable_caching
     ) do
@@ -76,7 +71,6 @@ module PDC
     def config=(new_config)
       @config = new_config
       apply_config
-      @config
     end
 
     def token_url
@@ -113,7 +107,6 @@ module PDC
     end
 
     # resets and returns the +Faraday+ +connection+ object
-    # rubocop:disable AbcSize
     def reset_base_connection
       faraday_config = {
         url:      api_url,

@@ -15,9 +15,8 @@ script:
 - bundle exec rake test
 - >
   if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-    bundle exec pronto run -f github_pr -c origin/${TRAVIS_BRANCH}
+    bundle exec rubocop 
   fi
-
 after_success:
 - >
   [ "$TRAVIS_BRANCH" = "master" ] &&

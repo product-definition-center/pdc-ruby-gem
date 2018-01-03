@@ -17,11 +17,10 @@ describe PDC::V1::ReleaseVariant do
     attributes.must_include :variant_version, :variant_release
   end
 
-  it 'returns cpe' do 
+  it 'returns cpe' do
     variant = cpe_variant.first
     cpe = variant.cpe
-    cpe.variant_uid.must_equal "Calamari"
-    cpe.cpe.must_equal "cpe:test"
+    cpe.variant_uid.must_equal 'Calamari'
+    cpe.cpe.must_equal 'cpe:test'
   end
-
 end

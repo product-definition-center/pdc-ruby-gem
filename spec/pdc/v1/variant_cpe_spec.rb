@@ -20,9 +20,9 @@ describe PDC::V1::VariantCpe do
     end
 
     it 'cpe works with where' do
-      count = cpe.where(cpe: "cpe:test").count
+      count = cpe.where(cpe: 'cpe:test').count
       count.must_equal 1
-      count = cpe.where(variant_uid: "Calamari").count
+      count = cpe.where(variant_uid: 'Calamari').count
       count.must_equal 1
     end
   end

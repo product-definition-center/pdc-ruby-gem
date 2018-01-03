@@ -36,6 +36,3 @@ PDC.configure do |config|
   config.disable_caching = true
   ###  config.log_level = :debug   # enable to see details log
 end
-
-# TODO: decide if this is okay to do
-include Fixtures

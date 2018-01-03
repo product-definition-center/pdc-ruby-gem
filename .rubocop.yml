@@ -1,6 +1,8 @@
 AllCops:
   DisplayCopNames: true
   DisplayStyleGuide: true
+  Exclude:
+    - bin/console
 
 Style/Documentation:
   Enabled: false
@@ -8,6 +10,10 @@ Style/Documentation:
 Style/ClassAndModuleChildren:
   Enabled: false
   EnforcedStyle: compact
+
+Style/MethodMissing:
+  Exclude:
+    - lib/pdc/resource/per_thread_registry.rb 
 
 Metrics/LineLength:
   Max: 100
@@ -20,6 +26,8 @@ Metrics/MethodLength:
 
 Metrics/AbcSize:
   Max: 25
+  Exclude:
+    - lib/pdc/config.rb
 
 Metrics/BlockLength:
   Max: 100
@@ -30,3 +38,7 @@ Metrics/BlockLength:
 Naming/PredicateName:
   Enabled: false
 
+Metrics/ModuleLength:
+  Exclude:
+    - lib/pdc/config.rb
+        
