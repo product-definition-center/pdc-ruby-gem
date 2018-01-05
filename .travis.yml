@@ -17,6 +17,7 @@ script:
   if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
     echo $PRONTO_PULL_REQUEST_ID
     echo $TEST
+    echo $PROACCESS
     PRONTO_GITHUB_ACCESS_TOKEN=$PROACCESS pronto run -f github_pr -c origin/${TRAVIS_BRANCH}
   fi
 after_success:
