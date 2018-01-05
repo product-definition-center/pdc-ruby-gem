@@ -13,16 +13,19 @@ install:
 - git config --global user.email "pdc@product-definition-center.com"
 script:
 - bundle exec rake test
-- >
+- |
   if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-    bundle exec pronto run -f github_pr -c origin/${TRAVIS_BRANCH}
+    echo $PRONTO_PULL_REQUEST_ID
+    echo $TEST
+    echo $PROACCESS
+    PRONTO_GITHUB_ACCESS_TOKEN=$PROACCESS pronto run -f github_pr -c origin/${TRAVIS_BRANCH}
   fi
-
 after_success:
-- >
-  [ "$TRAVIS_BRANCH" = "master" ] &&
-  [ "$TRAVIS_PULL_REQUEST" = "false" ] &&
+- |
+  [ "$TRAVIS_BRANCH" = "master" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ] &&
     make deploy_doc
 env:
   global:
-    PRONTO_PULL_REQUEST_ID=${TRAVIS_PULL_REQUEST}
+  - TEST="1234"
+  - PRONTO_PULL_REQUEST_ID=${TRAVIS_PULL_REQUEST}
+  - secure: bvtOndNj/qjj8htf1FWaR/ezfG+nXBp9Ke60H7sVh+qi4OG+3XNN+nJX/4uremGevkiPUH9n5Edq/rhgw+Z/7Ih6AA2LJHdJgv2YE5+FhEyjoNui/IU4x/JNQ5LAi+w68+6UVxvgDLHWbYCn05o8am/4Ybvdv1QIZSAn4fLhQ/lmGGRBBoHdSrOvdP2Fpt36bAF1YcVxmVNgmNBOGb0V3W5YUIPl3vfX+p9D/NqDCycgwMcykmuiWUpMVm9E+gMISCkmwIXHBdQX5DoRYol5vcPV2muGHKceOyqHbrGmr/it8/JQE9RPCqhLlI/dkCACZ57RRPfrgyQOrMAwQcI+zO44gu4rmwQ8h4/lQYZ9X704qapqCFQM8M0mDfmRvSGUyrDF9cE7pl+SIdm1zFuo0IUUzk723icFTVveMSBTnI4RXYUYWcq2SWrrWFiQdmXGZVsOxBtV65DezKKt4jhr0cOIN+VqyLi5TejgcLry9PgXu7fooTzjaJoxiJ85Hl8c7weWCbJAn/CGjATJDkt7Myxr5hGy05vqNdclSmDM/CMdFqBUJDcc+67XceWnQovxyUGdYAh/TmEd7Cu4i7348mfTPxWarLpHe8PhwhRhe3gn8XFYPp5s75CTDa+ONDTt9ghtlYxpaNPI1/BTkaSWMdR4+gP2Gh3kSnPfA72e9hU=
