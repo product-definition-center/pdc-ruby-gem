@@ -13,7 +13,7 @@ module PDC::V1
 
     # Implement this foreign_key method for belongs_to to use
     def foreign_key
-      self.release
+      release
     end
 
     ### NOTE

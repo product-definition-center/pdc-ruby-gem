@@ -7,7 +7,8 @@ module PDC
 
       def initialize(klass, parent, name, options = {})
         super(klass, options)
-        @parent, @name = parent, name
+        @parent = parent
+        @name = name
       end
 
       def load
@@ -26,33 +27,33 @@ module PDC
         add_to_parent super
       end
 
-      alias :build :new
+      alias build new
 
       private
 
-        def add_to_parent(record)
-          update_parent record
-        end
+      def add_to_parent(record)
+        update_parent record
+      end
 
-        def fetch
-          fetch_embedded || super
-        end
+      def fetch
+        fetch_embedded || super
+      end
 
-        def fetch_embedded
-          if embedded
-            PDC::HTTP::Result.new(data: embedded)
-          elsif !uri
-            PDC::HTTP::Result.new(data: nil)
-          end
+      def fetch_embedded
+        if embedded
+          PDC::HTTP::Result.new(data: embedded)
+        elsif !uri
+          PDC::HTTP::Result.new(data: nil)
         end
+      end
 
-        def embedded
-          parent.attributes[name]
-        end
+      def embedded
+        parent.attributes[name]
+      end
 
-        def update_parent(value)
-          parent.attributes[name] = value
-        end
+      def update_parent(value)
+        parent.attributes[name] = value
+      end
     end
   end
 end

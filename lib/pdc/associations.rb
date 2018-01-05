@@ -22,10 +22,11 @@ module PDC
       end
 
       private
-        def create_association(name, type, options)
-          puts "...... #{self} creates association belongs to ............................"
-          self.associations = associations.merge(name => Builder.new(self, name, type, options))
-        end
+
+      def create_association(name, type, options)
+        puts "...... #{self} creates association belongs to ............................"
+        self.associations = associations.merge(name => Builder.new(self, name, type, options))
+      end
     end
   end
 end
