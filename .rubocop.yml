@@ -29,6 +29,10 @@ Metrics/AbcSize:
   Exclude:
     - lib/pdc/config.rb
 
+Metrics/ModuleLength:
+  Exclude:
+    - lib/pdc/config.rb
+        
 Metrics/BlockLength:
   Max: 100
   Exclude:
@@ -37,8 +41,3 @@ Metrics/BlockLength:
 
 Naming/PredicateName:
   Enabled: false
-
-Metrics/ModuleLength:
-  Exclude:
-    - lib/pdc/config.rb
-        
