@@ -14,7 +14,6 @@ module PDC
   require 'pdc/http'
   require 'pdc/resource'
 
-  require 'pdc/associations'
   require 'pdc/config'
   require 'pdc/base'
   require 'pdc/v1'
