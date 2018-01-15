@@ -22,7 +22,7 @@ def main
 
   data = PDC::V1::ReleaseVariant.where(uid: 'ARfVp').first
   rele = data.parent_release
-  puts "====#{data.release}=======#{rele.release_id}=="
+  ap "#{data.release} and #{rele.release_id} ..."
 end
 
 main if $PROGRAM_NAME == __FILE__

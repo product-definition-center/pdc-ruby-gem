@@ -90,10 +90,10 @@ module PDC::Resource
     end
 
     def method_missing(name, *args, &block)
-      if attribute?(name) then attribute(name)
+      if association?(name) then association(name).load
+      elsif attribute?(name) then attribute(name)
       elsif predicate?(name)   then predicate(name)
       elsif setter?(name)      then set_attribute(name, args.first)
-      elsif association?(name) then association(name).load
       else super
       end
     end

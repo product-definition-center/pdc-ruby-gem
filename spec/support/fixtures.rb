@@ -28,6 +28,7 @@ module Fixtures
     include PDC::Resource::Attributes
     include PDC::Resource::Identity
     include PDC::Resource::Scopes
+    include PDC::Resource::Associations
   end
 
   class CustomPrimaryKeyModel
@@ -37,6 +38,7 @@ module Fixtures
     include PDC::Resource::Attributes
     include PDC::Resource::Identity
     include PDC::Resource::Scopes
+    include PDC::Resource::Associations
 
     self.primary_key = :foobar
   end
@@ -48,6 +50,7 @@ module Fixtures
     include PDC::Resource::Identity
     include PDC::Resource::Attributes
     include PDC::Resource::Scopes
+    include PDC::Resource::Associations
   end
 
   class Model < ModelBase; end
@@ -60,6 +63,7 @@ module Fixtures
       include PDC::Resource::Identity
       include PDC::Resource::Attributes
       include PDC::Resource::Scopes
+      include PDC::Resource::Associations
     end
   end
 end
