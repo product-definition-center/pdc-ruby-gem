@@ -13,7 +13,7 @@ module PDC::Resource
 
       def foreign_key
         (@options[:foreign_key] || "#{parent.class.model_name.element}_id").to_sym
-      end 
+      end
     end
   end
 end

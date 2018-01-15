@@ -14,11 +14,9 @@ module PDC::Resource
     module ClassMethods
       def belongs_to(name, options = {})
         if attributes.include? name.to_s
-          raise NameError.new("The association's name should be the same 
-            associations attributes' name")
-        else
-          create_association(name, BelongsTo, options)
+          raise NameError, "The association's name should be the same associations attributes' name"
         end
+        create_association(name, BelongsTo, options)
       end
 
       private
