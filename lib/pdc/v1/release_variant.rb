@@ -6,16 +6,16 @@ module PDC::V1
                :variant_version, :variant_release,
                :allowed_push_targets
 
-    def release
-      Release.find(attributes[:release])
-    end
+    # If you create a belongs_to association, there should
+    # be a parameter called foreign_key
+    # And the association's name shouldn't be the same as attributes
+    belongs_to :parent_release, foreign_key: :release, class_name: 'PDC::V1::Release'
 
     ### NOTE
     # ReleaseVariant is different from other resources in the way
     # its url is created so it requires special handling
     def initialize(attrs = {})
       super
-
       instance_uri = self.class.resource_path + '/(:release)/(:uid)'
       instance_path = PDC::Resource::Path.new(instance_uri, attrs).expanded
       @url = connection.build_url(instance_path).to_s

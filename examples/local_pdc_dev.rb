@@ -19,6 +19,10 @@ def main
 
   cpes = PDC::V1::VariantCpe.all!.to_a
   ap cpes
+
+  data = PDC::V1::ReleaseVariant.where(uid: 'ARfVp').first
+  rele = data.parent_release
+  ap "#{data.release} and #{rele.release_id} ..."
 end
 
 main if $PROGRAM_NAME == __FILE__
