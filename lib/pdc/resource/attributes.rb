@@ -90,7 +90,8 @@ module PDC::Resource
     end
 
     def method_missing(name, *args, &block)
-      if attribute?(name) then attribute(name)
+      if association?(name) then association(name).load
+      elsif attribute?(name) then attribute(name)
       elsif predicate?(name)   then predicate(name)
       elsif setter?(name)      then set_attribute(name, args.first)
       else super
@@ -98,7 +99,15 @@ module PDC::Resource
     end
 
     def respond_to_missing?(name, include_private = false)
-      attribute?(name) || predicate?(name) || setter?(name) || super
+      association?(name) || attribute?(name) || predicate?(name) || setter?(name) || super
+    end
+
+    def association?(name)
+      associations.key?(name)
+    end
+
+    def association(name)
+      associations[name].build(self)
     end
 
     def attribute?(name)

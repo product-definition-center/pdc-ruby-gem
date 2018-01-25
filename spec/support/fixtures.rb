@@ -28,6 +28,7 @@ module Fixtures
     include PDC::Resource::Attributes
     include PDC::Resource::Identity
     include PDC::Resource::Scopes
+    include PDC::Resource::Associations
   end
 
   class CustomPrimaryKeyModel
@@ -37,6 +38,7 @@ module Fixtures
     include PDC::Resource::Attributes
     include PDC::Resource::Identity
     include PDC::Resource::Scopes
+    include PDC::Resource::Associations
 
     self.primary_key = :foobar
   end
@@ -48,6 +50,7 @@ module Fixtures
     include PDC::Resource::Identity
     include PDC::Resource::Attributes
     include PDC::Resource::Scopes
+    include PDC::Resource::Associations
   end
 
   class Model < ModelBase; end
@@ -60,6 +63,7 @@ module Fixtures
       include PDC::Resource::Identity
       include PDC::Resource::Attributes
       include PDC::Resource::Scopes
+      include PDC::Resource::Associations
     end
   end
 end
@@ -112,5 +116,26 @@ module Fixtures
   class CustomParserModel < Base
     attributes :name, :body, :age
     attribute  :age, parser: FixNumParser
+  end
+end
+
+module Fixtures
+  class Association < PDC::Base
+    # stub the connection
+    SITE = 'https://example.com/'.freeze
+    self.connection = Faraday.new(url: SITE) do |faraday|
+      faraday.request   :json
+      faraday.use       PDC::Response::Parser
+      faraday.adapter   Faraday.default_adapter
+    end
+  end
+
+  class ProductVersion < Association
+    has_many :releases, uri: 'rest_api/v1/releases/?product_version=:product_version_id'
+    has_many :active_releases, class_name: 'Fixtures::Release', uri: 'rest_api/v1/releases/?product_version=:product_version_id&active=true'
+  end
+
+  class Release < Association
+    self.primary_key = :release_id
   end
 end

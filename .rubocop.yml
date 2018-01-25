@@ -41,4 +41,3 @@ Naming/PredicateName:
 Metrics/ModuleLength:
   Exclude:
     - lib/pdc/config.rb
-        

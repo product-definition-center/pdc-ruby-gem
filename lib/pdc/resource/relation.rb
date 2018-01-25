@@ -12,6 +12,7 @@ module PDC::Resource
 
     attr_reader :klass
     attr_writer :params
+    delegate :to_ary, :[], :any?, :empty?, :last, :size, :metadata, to: :contents!
 
     alias all to_a
 
