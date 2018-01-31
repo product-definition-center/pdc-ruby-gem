@@ -10,5 +10,6 @@ module PDC
     require 'pdc/v1/released_file'
     require 'pdc/v1/multi_destination'
     require 'pdc/v1/variant_cpe'
+    require 'pdc/v1/push_target'
   end
 end
