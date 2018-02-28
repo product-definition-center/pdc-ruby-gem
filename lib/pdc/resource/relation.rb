@@ -1,6 +1,7 @@
 require 'pdc/resource/relation/query'
 require 'pdc/resource/relation/pagination'
 require 'pdc/resource/relation/finder'
+require 'curb'
 
 module PDC::Resource
   class Relation
@@ -37,6 +38,7 @@ module PDC::Resource
     # so find(id, release: 'rel') need to work
     def find(id, vars = {})
       raise PDC::ResourceNotFound if id.blank?
+
       where(primary_key => id)
         .where(vars)
         .find_one!
