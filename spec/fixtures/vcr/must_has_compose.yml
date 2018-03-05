@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://example.com//rest_api/v1/releases/rhel-7.1/rpm%2Dmapping/tuned/
+    uri: https://example.com/rest_api/v1/releases/rhel-7.1/rpm%2Dmapping/tuned/
     body:
       encoding: US-ASCII
       string: ''
