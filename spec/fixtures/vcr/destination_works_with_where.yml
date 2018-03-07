@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://example.com/rest_api/v1/multi%2Ddestinations/?active=false
+    uri: https://example.com/rest_api/v1/multi%2Ddestinations/?active=false
     body:
       encoding: US-ASCII
       string: ''

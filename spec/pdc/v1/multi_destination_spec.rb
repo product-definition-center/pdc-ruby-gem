@@ -11,16 +11,16 @@ describe PDC::V1::MultiDestination do
     VCR.eject_cassette
   end
 
-  let(:multi_destonations) { PDC::V1::MultiDestination }
+  let(:multi_destinations) { PDC::V1::MultiDestination }
 
   describe 'count' do
     it 'destination returns count' do
-      count = multi_destonations.count
+      count = multi_destinations.count
       count.must_equal 1
     end
 
     it 'destination works with where' do
-      count = multi_destonations.where(active: false).count
+      count = multi_destinations.where(active: false).count
       count.must_equal 0
     end
   end
