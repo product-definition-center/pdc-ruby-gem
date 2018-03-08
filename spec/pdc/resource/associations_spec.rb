@@ -56,46 +56,11 @@ describe PDC::Resource::Associations do
 
   describe 'cache' do
     it 'cached result for associations' do
-      endpoint1 = stub_request(:get, releases_url1)\
-                  .to_return_json('data':
-                                  [{ 'release_id': 'ceph-1.3@rhel-7', 'short': 'ceph',
-                                     'version': '1.3', 'name': 'Red Hat Ceph Storage',
-                                     'base_product': 'rhel-7', 'active': true,
-                                     'product_version': 'ceph-1', 'release_type': 'ga',
-                                     'compose_set': [], 'integrated_with': 'null', 'sigkey': 'null',
-                                     'allow_buildroot_push': true, 'allowed_debuginfo_services': [],
-                                     'allowed_push_targets': [], 'bugzilla': 'null',
-                                     'dist_git': 'null', 'brew': 'null', 'product_pages': 'null',
-                                     'errata': 'null' }])
-      endpoint2 = stub_request(:get, releases_url2)\
-                  .to_return_json('data':
-                                  [{ 'release_id': 'ceph-1.3@rhel-7', 'short': 'ceph',
-                                     'version': '1.3', 'name': 'Red Hat Ceph Storage',
-                                     'base_product': 'rhel-7', 'active': true,
-                                     'product_version': 'ceph-1', 'release_type': 'ga',
-                                     'compose_set': [], 'integrated_with': 'null', 'sigkey': 'null',
-                                     'allow_buildroot_push': true, 'allowed_debuginfo_services': [],
-                                     'allowed_push_targets': [], 'bugzilla': 'null',
-                                     'dist_git': 'null', 'brew': 'null', 'product_pages': 'null',
-                                     'errata': 'null' },
-                                   { 'release_id': 'ceph-1.3-updates@rhel-7', 'short': 'ceph',
-                                     'version': '1.3', 'name': 'Red Hat Ceph Storage',
-                                     'base_product': 'rhel-7', 'active': true,
-                                     'product_version': 'ceph-1', 'release_type': 'updates',
-                                     'compose_set': [], 'integrated_with': 'null', 'sigkey': 'null',
-                                     'allow_buildroot_push': false, 'allowed_debuginfo_services': [],
-                                     'allowed_push_targets': [], 'bugzilla': 'null',
-                                     'dist_git': 'null', 'brew': 'null', 'product_pages': 'null',
-                                     'errata': 'null' }])
-
       product_version = Fixtures::ProductVersion.new(product_version_id: 'ceph-1')
       releases = product_version.releases.where(release_id: 'ceph-1.3@rhel-7')
-      releases.any?
-      releases.to_a
-      assert_requested endpoint1, times: 1
-
-      product_version.releases.to_a
-      assert_requested endpoint2, times: 1
+      all_releases = product_version.releases.to_a
+      assert_equal releases.first.data[0].name, 'Red Hat Ceph Storage'
+      assert_equal all_releases[0]['data'].count, 2
     end
   end
 
