@@ -56,6 +56,8 @@ describe PDC::Resource::Associations do
 
   describe 'cache' do
     it 'cached result for associations' do
+      # Ignore using the vcr when there is a stub
+      VCR.eject_cassette
       endpoint1 = stub_request(:get, releases_url1)\
                   .to_return_json('data':
                                   [{ 'release_id': 'ceph-1.3@rhel-7', 'short': 'ceph',
