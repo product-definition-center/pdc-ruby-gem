@@ -23,5 +23,9 @@ describe PDC::V1::MultiDestination do
       count = multi_destinations.where(active: false).count
       count.must_equal 0
     end
+
+    it 'return empty data for specific global component and origin repo release' do
+      multi_destinations.where(active: true, global_component: 'ceph', origin_repo_release_id: 'ceph-1.3').all!.must_equal []
+    end
   end
 end
