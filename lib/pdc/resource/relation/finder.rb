@@ -19,6 +19,13 @@ module PDC::Resource
 
     def result
       @result ||= fetch(clone)
+    rescue Faraday::ConnectionFailed => e
+      raise PDC::ConnectionFailed, e
+    rescue Curl::Err::HostResolutionError => e
+      raise PDC::HostResolutionError, e
+    rescue StandardError => e
+      raise e unless e.class.parent != PDC
+      raise PDC::Error, e
     end
   end
 end
